@@ -1,7 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import DetailHeader from "../../components/DetailHeader.astro";
 import DetailPostLayout from "../../layouts/DetailPostLayout.astro";
 import CallToAction from "../../components/CallToAction.astro";
+import coverImage from "../../assets/projects/cover/cover-kmnf.png";
 ---
 <DetailPostLayout
 	title="KMNF - High-Performance URL Shortener | Febiadi Wisnu Akbar"
@@ -53,6 +55,12 @@ import CallToAction from "../../components/CallToAction.astro";
 					</div>
 				</div>
 			</section>
+
+			<section class="preview">
+				<picture class="picture">
+					<Image src={coverImage} alt="KMNF URL Shortener Dashboard" loading="lazy" decoding="async" />
+				</picture>
+			</section>
 		</main>
 	</div>
 </DetailPostLayout>
@@ -67,5 +75,11 @@ import CallToAction from "../../components/CallToAction.astro";
 }
 .achievement-list li {
 	margin-bottom: 0.5rem;
+}
+.picture img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	border: 1px solid var(--color-700);
 }
 </style>

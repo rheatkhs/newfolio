@@ -18,7 +18,7 @@ export const projectItems: ProjectItem[] = [
 		date: "2026-03-15",
 		detail: "/detail/warung-jus",
 		url: "https://warung-jus.vercel.app",
-		cover: ['cover/cover-todo.jpg'],
+		cover: ['cover/cover-warung-jus.png'],
 		tags: ['NEXT.JS', 'TAILWIND', 'POS', 'QRIS']
 	},
 	{
@@ -28,7 +28,7 @@ export const projectItems: ProjectItem[] = [
 		date: "2026-03-17",
 		detail: "/detail/kmnf",
 		url: "https://kmnf.site",
-		cover: ['cover/cover-3d-cloud.jpg'],
+		cover: ['cover/cover-kmnf.png'],
 		tags: ['NODE.JS', 'REDIS', 'EXPRESS', 'REACT']
 	},
 	{
@@ -38,7 +38,7 @@ export const projectItems: ProjectItem[] = [
 		date: "2026-02-20",
 		detail: "/detail/bugscribe",
 		url: "https://bugscribe.vercel.app",
-		cover: ['cover/cover-3d-logo.jpg'],
+		cover: ['cover/cover-bugscribe.png'],
 		tags: ['CYBERSECURITY', 'BUG BOUNTY', 'REACT', 'CVSS']
 	},
 	{
@@ -48,7 +48,7 @@ export const projectItems: ProjectItem[] = [
 		date: "2026-01-10",
 		detail: "https://resumix.kmnf.site",
 		url: "https://resumix.kmnf.site",
-		cover: ['cover/cover-3d-icons.jpg'],
+		cover: ['cover/cover-resumix.png'],
 		tags: ['REACT', 'PRODUCTIVITY', 'RESUME']
 	},
 	{
@@ -58,7 +58,7 @@ export const projectItems: ProjectItem[] = [
 		date: "2025-11-05",
 		detail: "https://halobox.vercel.app",
 		url: "https://halobox.vercel.app",
-		cover: ['travel/01.jpg', 'travel/02.jpg'],
+		cover: ['cover/cover-halobox.png'],
 		tags: ['WEB', 'CREATIVE', 'PHOTOBOOTH']
 	},
 	{
@@ -68,7 +68,7 @@ export const projectItems: ProjectItem[] = [
 		date: "2025-09-12",
 		detail: "https://sotopremium.wojistudio.id",
 		url: "https://sotopremium.wojistudio.id",
-		cover: ['cover/cover-todo.jpg'],
+		cover: ['cover/cover-sotopremium.png'],
 		tags: ['MARKETPLACE', 'CATALOG', 'E-COMMERCE']
 	},
 ];
