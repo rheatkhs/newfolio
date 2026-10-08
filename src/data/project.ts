@@ -12,20 +12,10 @@ export interface ProjectItem {
 
 export const projectItems: ProjectItem[] = [
 	{
-		title: "MEVIA 3D",
-		title_en: "Modern Eco Virtual Interactive Adventure",
-		description: "The official 3D interactive environmental education platform for SMA Don Bosco 2 Jakarta, combining real-time 3D waste sorting simulation (Bank Sampah 3D), board-game gamification (Eco Challenge), and school leaderboards.",
-		date: "2026-04-06",
-		detail: "/detail/mevia",
-		url: "https://www.mevia.web.id",
-		cover: ['cover/cover-mevia.png'],
-		tags: ['THREE.JS', '3D SIMULATION', 'EDTECH', 'GAMIFICATION', 'TAILWIND']
-	},
-	{
 		title: "Ferrari 296 GT3",
 		title_en: "Interactive 3D WebGL Digital Showcase & Configurator",
 		description: "An immersive real-time 3D web experience dedicated to the Ferrari 296 GT3 racing machine, featuring photorealistic PBR materials, custom GLSL shaders, camera choreography, and interactive aerodynamics breakdown.",
-		date: "2026-04-05",
+		date: "2026-04-06",
 		detail: "/detail/2960-gt3",
 		url: "https://2960-gt3.vercel.app",
 		cover: ['cover/cover-2960-gt3.png'],
@@ -35,7 +25,7 @@ export const projectItems: ProjectItem[] = [
 		title: "KADIA",
 		title_en: "Knowledge-Based Assistant for Drafting Institutional Acts",
 		description: "An AI-powered legal technology platform designed for municipal government institutions to draft, harmonize, and validate legal products using Multi-Agent AI and strict Qdrant vector RAG.",
-		date: "2026-04-04",
+		date: "2026-04-05",
 		detail: "/detail/kadia",
 		url: "https://dev-kadia.pekalongankota.go.id",
 		cover: ['cover/cover-kadia.png'],
@@ -45,7 +35,7 @@ export const projectItems: ProjectItem[] = [
 		title: "NeoStream",
 		title_en: "Modern Web-Based IPTV & HLS Streaming Platform",
 		description: "A sleek, browser-native IPTV streaming client capable of parsing remote and local M3U playlists, streaming low-latency HLS/m3u8 live video feeds, rendering EPG electronic program guides, and bypassing CORS restrictions seamlessly.",
-		date: "2026-04-03",
+		date: "2026-04-04",
 		detail: "/detail/neostream",
 		url: "https://neostream-inky.vercel.app",
 		cover: ['cover/cover-neostream.png'],
@@ -55,7 +45,7 @@ export const projectItems: ProjectItem[] = [
 		title: "Kopi Kenangan",
 		title_en: "Brand Showcase & Digital Experience Portal",
 		description: "An interactive brand experience and digital product catalog for Kopi Kenangan, celebrating Indonesia's premier grab-and-go coffee chain with interactive origin stories, product showcases, and retail store integrations.",
-		date: "2026-04-02",
+		date: "2026-04-03",
 		detail: "/detail/kopken",
 		url: "https://kopken.mevia.web.id",
 		cover: ['cover/cover-kopken.png'],

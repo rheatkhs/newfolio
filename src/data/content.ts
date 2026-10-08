@@ -53,7 +53,7 @@ export const aboutTdk: SeoTdk = {
 export const projectTdk: SeoTdk = {
 	title: 'Projects | Febiadi Wisnu Akbar',
 	description: 'A complete inventory of tools, applications, and source repositories engineered by Febiadi Wisnu Akbar.',
-	keywords: 'SIGAP Kota Pekalongan, Kopi Kenangan, MEVIA 3D, KADIA, NeoStream, Ferrari 296 GT3, Lyricscape, PPID Kota Pekalongan, Pramuka Kota Pekalongan, Government Portal, Brand Experience, Three.js 3D, EdTech, Legal AI, Febiadi Wisnu Akbar Projects'
+	keywords: 'Ferrari 296 GT3, KADIA, NeoStream, Kopi Kenangan, Project 39 Lyricscape, SIGAP Kota Pekalongan, PPID Kota Pekalongan, Pramuka Kota Pekalongan, Government Portal, Brand Experience, Three.js 3D, Legal AI, Febiadi Wisnu Akbar Projects'
 }
 
 export const notFoundTdk: SeoTdk = {
