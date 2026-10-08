@@ -41,7 +41,7 @@ const { Content } = await render(entry);
 
 				</div>
 				<div class="post-line post-line-bottom text-center" >
-					<span class="text-center">更新于：{entry.data.publishDate.toISOString().slice(0,10)}</span>
+					<span class="text-center">Updated: {entry.data.publishDate.toISOString().slice(0,10)}</span>
 					{
 						entry.data.read &&   <span class="" >•</span>
 					<span >{entry.data.read} min read</span>
@@ -61,7 +61,7 @@ const { Content } = await render(entry);
 
 
 	<!-- <div class="action-back">
-		<a class="back-link" href="/blog/"><Icon icon="arrow-left"/> 博客 </a>
+		<a class="back-link" href="/blog/"><Icon icon="arrow-left"/> Blog </a>
 	</div> -->
 	<!-- {entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />} -->
 

@@ -1,20 +1,18 @@
-
 [
-
 	{
 		"id": "1",
 		"cover": "/assets/cover/pexels-tink-s-838159870-19489123.jpg",
-		"title": "【示例】阿勒泰",
-		"desc": "阿勒泰旅行记录",
+		"title": "Altay Travel Landscapes",
+		"desc": "Photography and travel landscape journal",
 		"category": "photography",
-		"tag": "摄影",
+		"tag": "Photography",
 		"date": "2024-07-05"
 	},
 	{
 		"id": "2",
 		"cover": "/assets/cover/cover-3d-cloud.jpg",
-		"title": "【示例】Blender 云服务场景",
-		"desc": "Blender, Cloud",
+		"title": "Cloud Infrastructure 3D Scene",
+		"desc": "Blender 3D scene exploring cloud architecture concept",
 		"category": "3d",
 		"tag": "3D",
 		"date": "2024-07-05"
@@ -22,19 +20,19 @@
 	{
 		"id": "4",
 		"cover": "/assets/cover/cover-free-3d-valentines-assets.jpg",
-		"title": "【示例】Valentine's Day 3D Icons",
-		"desc": "Free 3D Icons Pack",
+		"title": "Valentine's Day 3D Icons",
+		"desc": "Free 3D icon asset pack for web and app interfaces",
 		"url": "https://valentine.uiuxdeck.com/",
 		"detail": "/detail/free-3d-valentines-assets/",
-		"category":  "web,3d",
+		"category": "web,3d",
 		"tag": "3D",
-		"date": "2024-10-8"
+		"date": "2024-10-08"
 	},
 	{
 		"id": "5",
 		"cover": "/assets/cover/cover-todo.jpg",
-		"title": "【示例】TodoList 网页版",
-		"desc": "一款优秀的设计简洁的 Todolist 网页版本",
+		"title": "Online Todo List App",
+		"desc": "Minimalist client-side task manager with local storage",
 		"url": "https://todo.uiineed.com/",
 		"detail": "/detail/todo",
 		"category": "web",
@@ -46,8 +44,8 @@
 		"id": "6",
 		"cover": "/assets/cover/cover-gradientshub.jpg",
 		"useVideo": false,
-		"title": "GradientsHub.com",
-		"desc": "高级渐变背景下载",
+		"title": "GradientsHub",
+		"desc": "Curated collection of modern CSS gradients and backgrounds",
 		"url": "https://gradientshub.com/?ref=portfolio",
 		"detail": "https://gradientshub.com/?ref=portfolio",
 		"category": "web,recommend,brand",
@@ -59,8 +57,8 @@
 		"id": "7",
 		"cover": "/assets/cover/cover-uiuxdeck.jpg",
 		"useVideo": false,
-		"title": "UIUX 设计工具&资源库",
-		"desc": "分享我的设计收藏库",
+		"title": "UI/UX Developer Toolkit",
+		"desc": "Curated engineering tools, UI libraries, and design resources",
 		"url": "https://uiuxdeck.com/?ref=portfolio",
 		"detail": "https://uiuxdeck.com/?ref=portfolio",
 		"category": "web,recommend,brand",
@@ -72,8 +70,8 @@
 		"id": "9",
 		"cover": "/assets/cover/cover-ricoog.jpg",
 		"useVideo": false,
-		"title": "Rico OG Gallery",
-		"desc": "Rico OG Inspiration Library",
+		"title": "OG Image Gallery",
+		"desc": "Open Graph preview card generator and inspiration library",
 		"url": "https://ricoog.com/",
 		"detail": "https://ricoog.com/",
 		"category": "web,recommend",
@@ -86,8 +84,8 @@
 		"id": "10",
 		"cover": "/assets/cover/cover-ricoui-starter.jpg",
 		"useVideo": false,
-		"title": "RicoUI Astro 启动模板",
-		"desc": "Ricoui Starter Template",
+		"title": "Modern Astro Starter Template",
+		"desc": "Clean and extensible Astro development starter",
 		"url": "https://ricoui-saas-zh.netlify.app/",
 		"detail": "https://ricoui-saas-zh.netlify.app/",
 		"category": "web,recommend",
@@ -100,8 +98,8 @@
 		"id": "11",
 		"cover": "/assets/cover/cover-ricoui-saas.jpeg",
 		"useVideo": false,
-		"title": "设计驱动的 SaaS 模板",
-		"desc": "Ricoui SaaS Template",
+		"title": "SaaS Platform Template",
+		"desc": "High-conversion web application template with responsive layout",
 		"url": "https://ricoui-saas-zh.netlify.app/",
 		"detail": "https://ricoui-saas-zh.netlify.app/",
 		"category": "web,recommend",
@@ -114,8 +112,8 @@
 		"id": "12",
 		"cover": "/assets/cover/cover-ricoui-portfolio.jpg",
 		"useVideo": false,
-		"title": "开源个人网站模板",
-		"desc": "Ricoui Portfolio Template",
+		"title": "Open Source Portfolio Engine",
+		"desc": "Static-generated developer portfolio template powered by Astro",
 		"url": "https://ricoui-portfolio.pages.dev/",
 		"detail": "https://ricoui-portfolio.pages.dev/",
 		"category": "web,recommend",
@@ -124,6 +122,4 @@
 		"mark": true,
 		"opensource": false
 	}
-
-
 ]

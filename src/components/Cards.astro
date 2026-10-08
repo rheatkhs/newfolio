@@ -1,10 +1,6 @@
 ---
 import Filter from '../components/Filter.astro';
-// 引入 JSON 文件并加载数据
-// const cardJsonString = '/assets/data/card.json';
-// const cardData = JSON.parse(cardJsonString);
-// 使用 JSON 数据
-// import cardData from '../components/card.json';
+// Load home card data
 import cardData from '../data/home.json';
 const cards = [];
 for (const [index,item] of cardData.entries()) {
@@ -23,14 +19,13 @@ for (const [index,item] of cardData.entries()) {
   };
   cards.push(card);
 }
-// const cardFullData= JSON.stringify(cards);
 const count = cards.length;
 ---
 <Filter count={count} />
 <div class="section card">
     <div class="js-shuffle-sizer" >
         <div class="card-list my-shuffle-container" id="js-shuffle">
-            {cards.reverse().map((card) => (
+            {cards.slice().reverse().map((card) => (
               <div class="card-item col-xs-1a col-md-2a col-lg-3a col-xxl-4a" data-groups={JSON.stringify(card.category)} data-date-created={card.date} data-title={card.title}>
                   <div class="card-header">
                       <div class="card-type type">
@@ -42,16 +37,16 @@ const count = cards.length;
                   </div>
                   <div class="card-body">
                       <a href={card.detail ? card.detail:"javascript:void(0)"} class="card-figure" target={card.detail ? "_blank":"_self"}>
-                        (<img class="card-figure__img lazy"
+                        <img class="card-figure__img lazy"
                               src={card.cover} loading="lazy"
-                              alt="Loading Animations"
-                        >)
+                              alt={card.title}
+                        />
                       </a>
                   </div>
                   <div class="card-footer">
                       <div class="card-detail">
                           <a href={card.detail ? card.detail :"javascript:void(0)"} target={card.detail ? "_blank":"_self"} class="card-name card-item__title">
-                            {card.mark && <span class="tag-original">推荐</span>}   {card.title}
+                            {card.mark && <span class="tag-original">Featured</span>}   {card.title}
                           </a>
                           <div class="card-info">
                             {card.description}
@@ -68,30 +63,20 @@ const count = cards.length;
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-      // 检查是否存在带有类名 '.card-figure__video' 的元素
-      const videos = document.querySelectorAll('.card-figure__video') as NodeListOf<HTMLVideoElement>;;
+      // Check for video elements with class '.card-figure__video'
+      const videos = document.querySelectorAll('.card-figure__video') as NodeListOf<HTMLVideoElement>;
 
-      // 如果存在视频元素，则执行相关操作
       if (videos.length > 0) {
           videos.forEach(video => {
-              // 设置自动播放
               video.autoplay = true;
-              // 禁止声音
               video.muted = true;
-              // 循环播放
               video.loop = true;
-              // 隐藏控制栏（包括进度条、播放/停止按钮和菜单栏）
               video.controls = false;
-              // 设置 playsinline 属性，以确保在移动设备上也能自动播放
               video.setAttribute('playsinline', '');
-              // 为了确保视频开始播放，我们可以添加一个 play() 调用
               video.play().catch(e => {
                   console.log("Auto-play was prevented:", e);
-                  // 一些浏览器可能会阻止自动播放，特别是在没有用户交互的情况下
               });
           });
-      } else {
-
       }
   });
 </script>

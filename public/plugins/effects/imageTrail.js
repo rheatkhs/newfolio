@@ -74,12 +74,12 @@ export class ImageTrail {
             this.isEnabled = false;
         }
 
-        // 新增：重启渲染循环的方法
+        // Restart render loop method
         restartRender() {
             if (this.isEnabled && !this.renderLoopActive) {
                 this.renderLoopActive = true;
-                cacheMousePos = {...mousePos}; // 重置缓存的鼠标位置
-                lastMousePos = {...mousePos};  // 重置最后鼠标位置
+                cacheMousePos = {...mousePos}; // Reset cached mouse position
+                lastMousePos = {...mousePos};  // Reset last mouse position
                 requestAnimationFrame(() => this.render());
             }
         }

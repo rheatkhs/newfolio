@@ -6,27 +6,27 @@
 </div>
 
 <script is:inline type="module">
-    // 定义事件，用于组件间通信
+    // Custom event for inter-component communication
     const EFFECT_CHANGE_EVENT = 'effect-state-changed';
 
-    // localStorage 操作函数
+    // localStorage helper functions
     const saveState = (state) => {
         try {
             localStorage.setItem('effectState', state.toString());
-            // 设置过期时间 (48小时)
+            // Expire in 48 hours
             const expiry = Date.now() + 48 * 60 * 60 * 1000;
             localStorage.setItem('effectStateExpiry', expiry.toString());
         } catch (e) {
-            console.error('无法保存状态到localStorage:', e);
+            console.error('Failed to save state to localStorage:', e);
         }
     };
 
     const getCurrentState = () => {
         try {
-            // 检查是否过期
+            // Check if expired
             const expiry = localStorage.getItem('effectStateExpiry');
             if (expiry && parseInt(expiry) < Date.now()) {
-                // 已过期，清除状态
+                // Expired: clear state
                 localStorage.removeItem('effectState');
                 localStorage.removeItem('effectStateExpiry');
                 return 0;
@@ -35,38 +35,37 @@
             const savedState = localStorage.getItem('effectState');
             return savedState ? parseInt(savedState) : 0;
         } catch (e) {
-            console.error('无法从localStorage读取状态:', e);
+            console.error('Failed to read state from localStorage:', e);
             return 0;
         }
     };
 
-    // 获取按钮元素
+    // Button elements
     const buttons = document.querySelectorAll('.train-switch button');
 
-    // 更新按钮显示
+    // Update active button display
     const updateButtonDisplay = (state) => {
         buttons.forEach((button, index) => {
             button.style.display = index === state ? 'block' : 'none';
         });
     };
 
-    // 初始化页面
+    // Initialize display
     const currentState = getCurrentState();
     updateButtonDisplay(currentState);
 
-    // 按钮点击事件
-    // 按钮点击事件
+    // Button click handler
     buttons.forEach((button, index) => {
         button.addEventListener('click', () => {
-            const newState = (index + 1) % 4; // 循环切换状态
+            const newState = (index + 1) % 4; // Cycle state
 
-            // 保存状态到 localStorage，48小时有效
+            // Save state to localStorage (valid for 48 hours)
             saveState(newState);
 
-            // 更新按钮显示
+            // Update button visibility
             updateButtonDisplay(newState);
 
-            // 触发自定义事件，通知效果组件更新
+            // Dispatch custom event to notify effect component
             window.dispatchEvent(new CustomEvent(EFFECT_CHANGE_EVENT, {
                 detail: { state: newState }
             }));
@@ -86,7 +85,7 @@
 	left:calc( 5% + 50px);
 	top: 15px;
 	z-index: 9999;
-    pointer-events: auto; /* 添加这一行，确保按钮可以接收鼠标事件 */
+    pointer-events: auto; /* Ensure button can receive mouse events */
 }
 .train-switch{
 	position: relative;
@@ -158,7 +157,7 @@
 	--train-color-rgb:200,200,200;
 }
 .animated {
-	animation-duration: .75s; /* 动画持续时间 */
+	animation-duration: .75s;
 	animation-fill-mode: forwards;
 }
 
@@ -167,10 +166,10 @@
 }
 @keyframes fadeIn {
 	from {
-		opacity: 0; /* 初始透明度 */
+		opacity: 0;
 	}
 	to {
-		opacity: 1; /* 最终透明度 */
+		opacity: 1;
 
 	}
 }
@@ -180,12 +179,12 @@
 }
 @keyframes fadeInRight {
 	from {
-		opacity: 0; /* 初始透明度 */
-		transform: translateX(-8px); /* 初始位置偏移 */
+		opacity: 0;
+		transform: translateX(-8px);
 	}
 	to {
-		opacity: 1; /* 最终透明度 */
-		transform: translateX(0); /* 最终位置 */
+		opacity: 1;
+		transform: translateX(0);
 	}
 }
 .delay-300{

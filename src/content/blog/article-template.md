@@ -1,8 +1,8 @@
 ---
-title: Markdown 样式示例
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
+title: Markdown Style Guide & Typography Demo
+description: 'Here is a sample of basic Markdown syntax and typography styling in Astro.'
 publishDate: 2024-10-20 00:00:00
-# img: /assets/stock.jpg 可配置文章封面
+# img: /assets/stock.jpg Optional article cover
 # img_alt: stock
 tags:
   - Markdown

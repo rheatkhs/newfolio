@@ -44,20 +44,13 @@
     }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+SC:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
 .special-elite-regular {
     font-family: "Special Elite", system-ui;
     font-weight: 400;
     font-style: normal;
-}
-
-@import url("https://chinese-fonts-cdn.deno.dev/packages/hwmct/dist/汇文明朝体/result.css");
-.font-huiwen {
-    font-family:'Huiwen-mincho'!important;
-    font-weight:400!important;
 }
 
 /* Global variables */
@@ -158,9 +151,9 @@
     --radius-large: 12px;
 
     /* Fonts */
-    --font-system: system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", "Hiragino Sans GB", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", Arial, SimSun, sans-serif;
-    --font-body: "Inter", "Noto Sans SC", system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "MiSans", "Lantinghei SC", "Noto Sans SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", "Hiragino Sans GB", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", Arial, SimSun, sans-serif;
-    --font-brand: "Inter", "Noto Sans SC", var(--font-system);
+    --font-system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-body: "Inter", var(--font-system);
+    --font-brand: "Inter", var(--font-system);
     --font-type: 'Special Elite', var(--font-system);
     /* Transitions */
     --theme-transition: 0.25s ease-in-out;
@@ -421,7 +414,7 @@ p {
 }
 
 /*------------------------------------------------------------------
-	 #模块 样式
+	 # Module Styles
 	-------------------------------------------------------------------*/
 .item-link {
     position: absolute;
@@ -434,9 +427,9 @@ p {
 }
 
 /*------------------------------------------------------------------
-	 #设置滚动条
+	 # Scrollbar Styles
 	-------------------------------------------------------------------*/
-/* 增加选择器优先级,并添加 html 和 body 的滚动条样式 */
+/* Custom scrollbar styling for html and body */
 html,
 body {
     &::-webkit-scrollbar {
@@ -462,7 +455,7 @@ body {
     }
 }
 
-/* 为其他可滚动元素添加样式 */
+/* Scrollbar styling for other scrollable elements */
 * {
     &::-webkit-scrollbar {
         width: 6px;
@@ -487,7 +480,7 @@ body {
     }
 }
 
-/* 移动端隐藏 html 和 body 的滚动条 */
+/* Mobile scrollbar adjustments */
 @media (max-width: 767px) {
 	html,
 	body {
@@ -592,7 +585,7 @@ body {
 }
 
 
-/* 图片比例设置 */
+/* Image aspect ratio utilities */
 .ar-sites {
     width: 100%;
     -o-object-fit: cover;

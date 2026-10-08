@@ -7,12 +7,12 @@ const images = Object.values(
 		eager: true,
 	})
 );
-// 导入 Image 组件和图像
+// Import image assets
 ---
 <DetailPostLayout
-	title="Tink Life | 灵感设计 | Rico "
-	description = 'RICO & TINK: DIARY LIFE ,移动端网站。自行开发的项目，独立负责所有原型、设计和开发工作，以及上线和维护。',
-	keywords = 'RICO & TINK: DIARY LIFE, 生活记录',
+	title="Tink Life - Diary & Travel App | Febiadi Wisnu Akbar"
+	description="Mobile-first web application featuring travel logs, photo stories, and fluid UI interactions."
+	keywords="Diary Life, Travel App, Mobile Web, Frontend, Febiadi Wisnu Akbar"
 >
 	<div class="post">
 		<main class="post-wrapper">
@@ -20,15 +20,15 @@ const images = Object.values(
 					tag="Project"
 					description="">
 						<h1 class="font-type">
-							Rico & Tink: Diary Life
+							Tink Travel & Diary Life
 						</h1>
 				</PostHeader>
 				<div class="content">
 					<div class="row desc">
 						<div class="col-1a">
-							<h3 class="post-title">技术工具选择：Figma & Vue</h3>
+							<h3 class="post-title">Technology Stack: Figma & Vue</h3>
 							<p class="post-desc">
-								移动端网站。自行开发的项目，独立负责所有原型、设计和开发工作，以及上线和维护。
+								A mobile-first web journal application designed and engineered to document journeys and photo diaries, featuring rich micro-interactions and smooth navigation.
 							</p>
 						</div>
 					</div>
@@ -54,7 +54,7 @@ const images = Object.values(
 <script>
 	var images = document.getElementsByTagName('img');
  	for (var i = 0; i < images.length; i++) {
-	// 为每个 img 标签添加 draggable="false" 属性
+	// Add draggable="false" attribute to images
 	images[i].setAttribute('draggable', 'false');
 	images[i].setAttribute('ref', 'nofollow');
   }

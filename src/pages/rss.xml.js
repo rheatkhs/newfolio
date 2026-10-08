@@ -4,14 +4,13 @@ import { getCollection } from "astro:content";
 export async function GET(context) {
   const blog = await getCollection('blog');
   return rss({
-    title: 'Ricocc Blog Template Astro',
-    description: 'Astro Blog Template by Ricocc',
+    title: 'Febiadi Wisnu Akbar | Blog',
+    description: 'Software Engineering blog and tech articles by Febiadi Wisnu Akbar',
     site: context.site,
     items: blog.map((post) => ({
       title: post.data.title,
-      pubDate: post.data.pubDate,
+      pubDate: post.data.publishDate,
       description: post.data.description,
-      // ...post.data,
       link: `/blog/${post.id}/`,
       stylesheet: '/rss/pretty-feed-v3.xsl',
     })),

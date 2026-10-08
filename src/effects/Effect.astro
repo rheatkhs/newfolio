@@ -45,7 +45,7 @@
 	import { preloadImages } from '/plugins/effects/utils.js';
 	import { ImageTrail } from '/plugins/effects/imageTrail.js';
 
-	// 图片数组定义
+	// Effect image sets
 	const images = [
 		'bezier.png',
 		'game.png',
@@ -82,16 +82,16 @@
 		'09.png',
 		'10.png'
 	];
-	// 定义事件，用于组件间通信
+	// Custom event for inter-component communication
 	const EFFECT_CHANGE_EVENT = 'effect-state-changed';
 
-	// 获取当前效果状态
+	// Get current effect state
 	const getCurrentState = () => {
 		try {
-			// 检查是否过期
+			// Check expiration
 			const expiry = localStorage.getItem('effectStateExpiry');
 			if (expiry && parseInt(expiry) < Date.now()) {
-				// 已过期，清除状态
+				// Expired: reset state
 				localStorage.removeItem('effectState');
 				localStorage.removeItem('effectStateExpiry');
 				return 0;
@@ -100,25 +100,25 @@
 			const savedState = localStorage.getItem('effectState');
 			return savedState ? parseInt(savedState) : 0;
 		} catch (e) {
-			console.error('无法从localStorage读取状态:', e);
+			console.error('Failed to read state from localStorage:', e);
 			return 0;
 		}
 	};
 
-	// DOM 元素
+	// DOM elements
 	const effects = document.querySelector('.effects');
 	const effectsImgs = document.querySelectorAll('.effects__img-inner');
 
-	// 更新图片
+	// Update image sources
 	const changeImages = (imagesArr, folderPath) => {
 		effectsImgs.forEach((img, index) => {
 			img.style.backgroundImage = `url(${folderPath}${imagesArr[index]})`;
 		});
 	};
 
-	// 更新效果类名
+	// Update effect classes
 	const updateEffectsClass = (state) => {
-		effects.className = 'effects'; // 重置类名
+		effects.className = 'effects'; // Reset class
 		switch (state) {
 			case 0:
 				effects.classList.add('train-icons');
@@ -134,7 +134,7 @@
 		}
 	};
 
-	// 初始化状态
+	// Initialize effect state
 	const initializeState = (state) => {
 		updateEffectsClass(state);
 		switch (state) {
@@ -152,23 +152,23 @@
 		}
 	};
 
-		// 保存 ImageTrail 实例
+	// ImageTrail instance reference
 	let imageTrailInstance = null;
 
-	// 图片预加载
+	// Preload images
 	preloadImages('.effects__img-inner').then(() => {
 		imageTrailInstance = new ImageTrail(document.querySelector('.effects'));
 	});
 
-	// 初始化页面
+	// Initialize page
 	const currentState = getCurrentState();
 	initializeState(currentState);
 
 	document.addEventListener('DOMContentLoaded', () => {
-		// 确保imageTrailInstance已创建后再检查
+		// Ensure imageTrailInstance is initialized before checking
 		const checkInstanceInterval = setInterval(() => {
 			if (imageTrailInstance) {
-			// 如果当前状态是3，则禁用鼠标跟随效果
+			// If state is 3 (OFF), disable cursor trail effect
 			if (currentState === 3) {
 				imageTrailInstance.disable();
 			}
@@ -180,16 +180,16 @@
 		window.addEventListener(EFFECT_CHANGE_EVENT, (e) => {
 		const newState = e.detail.state;
 
-		// 更新图片 & 类名
+		// Update images and classes
 		initializeState(newState);
 
-		// 控制鼠标跟随
+		// Toggle trail
 		if (imageTrailInstance) {
 			if (newState === 3) {
 			imageTrailInstance.disable();
 			} else {
 			imageTrailInstance.enable();
-			// 重要：确保在启用后重新开始渲染循环
+			// Ensure render loop restarts upon enabling
 			imageTrailInstance.restartRender();
 			}
 		}

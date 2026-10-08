@@ -167,14 +167,13 @@ const { title, description,keywords} = Astro.props;
 		</style>
 
 		<script>
-			// 获取所有的 img 标签
+			// Select all img elements
 			var images = document.getElementsByTagName('img');
-			// 遍历所有的 img 标签
 			for (var i = 0; i < images.length; i++) {
-			// 为每个 img 标签添加 draggable="false" 属性
-			images[i].setAttribute('draggable', 'false');
-			images[i].setAttribute('ref', 'nofollow');
-		}
+				// Prevent image dragging and add rel attributes
+				images[i].setAttribute('draggable', 'false');
+				images[i].setAttribute('ref', 'nofollow');
+			}
 		</script>
 
 

@@ -12,7 +12,7 @@ if (!UMAMIId) {
 }
 ---
 
-<!-- GA4 跟踪代码 -->
+<!-- GA4 tracking code -->
 {gaId && (
     <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} ></script>
     <script is:inline define:vars={{ gaId }}>
@@ -23,7 +23,7 @@ if (!UMAMIId) {
     </script>
 )}
 
-<!-- UMAMIId 跟踪代码 -->
+<!-- Umami tracking code -->
 {UMAMIId && (
     <script
         is:inline
