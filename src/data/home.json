@@ -6,79 +6,10 @@
 		"desc": "Official public information & governance transparency portal for Pekalongan City with online request tracking and public archives",
 		"url": "https://ppid.pekalongankota.go.id",
 		"detail": "/detail/ppid",
-		"category": "web,recommend",
+		"category": "web,recommend,government",
 		"tag": "Government / Portal",
 		"date": "2026-03-25",
 		"mark": true
-	},
-	{
-		"id": "2",
-		"cover": "/assets/cover/cover-warung-jus.png",
-		"title": "Warung Jus",
-		"desc": "Neobrutalist POS & real-time sales reporting system for local vendors with QRIS payment integration",
-		"url": "https://warung-jus.vercel.app",
-		"detail": "/detail/warung-jus",
-		"category": "web,recommend",
-		"tag": "Web / POS",
-		"date": "2026-03-15",
-		"mark": true
-	},
-	{
-		"id": "3",
-		"cover": "/assets/cover/cover-kmnf.png",
-		"title": "KMNF",
-		"desc": "High-performance URL shortener service with sub-15ms redirect resolution and click analytics",
-		"url": "https://kmnf.site",
-		"detail": "/detail/kmnf",
-		"category": "web,tools,recommend",
-		"tag": "Backend / Tool",
-		"date": "2026-03-17",
-		"mark": true
-	},
-	{
-		"id": "4",
-		"cover": "/assets/cover/cover-bugscribe.png",
-		"title": "BugScribe",
-		"desc": "Automated Bug Bounty reporting tool for HackerOne & Bugcrowd with dynamic CVSS calculator",
-		"url": "https://bugscribe.vercel.app",
-		"detail": "/detail/bugscribe",
-		"category": "web,security,recommend,tools",
-		"tag": "Security / Tool",
-		"date": "2026-02-20",
-		"mark": true
-	},
-	{
-		"id": "5",
-		"cover": "/assets/cover/cover-resumix.png",
-		"title": "Resumix",
-		"desc": "Modern, customizable CV and resume builder designed to create professional job applications in minutes",
-		"url": "https://resumix.kmnf.site",
-		"detail": "https://resumix.kmnf.site",
-		"category": "web,tools,recommend",
-		"tag": "Web / App",
-		"date": "2026-01-10",
-		"mark": true
-	},
-	{
-		"id": "6",
-		"cover": "/assets/cover/cover-halobox.png",
-		"title": "HALOBOX",
-		"desc": "Digital photobooth and memory creation platform offering customizable frames and instant captures",
-		"url": "https://halobox.vercel.app",
-		"detail": "https://halobox.vercel.app",
-		"category": "web,ui",
-		"tag": "Creative / UI",
-		"date": "2025-11-05"
-	},
-	{
-		"id": "7",
-		"cover": "/assets/cover/cover-sotopremium.png",
-		"title": "SotoPremium",
-		"desc": "Premium account marketplace catalog providing verified digital subscriptions with direct WhatsApp ordering",
-		"url": "https://sotopremium.wojistudio.id",
-		"detail": "https://sotopremium.wojistudio.id",
-		"category": "web,brand",
-		"tag": "Marketplace",
-		"date": "2025-09-12"
 	}
 ]
+
