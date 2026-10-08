@@ -2,6 +2,7 @@
 import Filter from '../components/Filter.astro';
 // Load home card data
 import cardData from '../data/home.json';
+import { projectItems } from '../data/project';
 const cards = [];
 for (const [index,item] of cardData.entries()) {
   const card = {
@@ -20,6 +21,7 @@ for (const [index,item] of cardData.entries()) {
   cards.push(card);
 }
 const count = cards.length;
+const totalProjectsCount = projectItems.length;
 ---
 <Filter count={count} />
 <div class="section card">
@@ -57,6 +59,16 @@ const count = cards.length;
               </div>
           </div>
           ))}
+    </div>
+    <div class="view-all-wrapper">
+        <a href="/project" class="view-all-btn">
+            <span>Explore All Projects</span>
+            <span class="view-all-count">({totalProjectsCount})</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </a>
     </div>
 </div>
 <script>
@@ -388,6 +400,54 @@ document.addEventListener('DOMContentLoaded', () => {
             transform: rotate(45deg);
             border-color: var(--color-200);
             background-color: rgba(255, 255, 255, 0.05);
+        }
+    }
+}
+
+.view-all-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    border-radius: 9999px;
+    border: 1px solid var(--border);
+    background-color: var(--filter-bg);
+    color: var(--color-200);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--font-body);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    .view-all-count {
+        font-size: 13px;
+        font-weight: 500;
+        opacity: 0.75;
+    }
+
+    svg {
+        transition: transform 0.25s ease;
+    }
+
+    &:hover {
+        border-color: var(--color-400);
+        background-color: var(--filter-bg-hover);
+        color: var(--color-100);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+        svg {
+            transform: translateX(4px);
         }
     }
 }

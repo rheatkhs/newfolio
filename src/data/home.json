@@ -70,29 +70,5 @@
 		"tag": "Government / Portal",
 		"date": "2026-03-25",
 		"mark": false
-	},
-	{
-		"id": "7",
-		"cover": "/assets/cover/cover-ppid.png",
-		"title": "PPID Kota Pekalongan",
-		"desc": "Official public information & governance transparency portal for Pekalongan City with online request tracking and public archives",
-		"url": "https://ppid.pekalongankota.go.id",
-		"detail": "/detail/ppid",
-		"category": "web,government",
-		"tag": "Government / Portal",
-		"date": "2026-03-22",
-		"mark": false
-	},
-	{
-		"id": "8",
-		"cover": "/assets/cover/cover-pramuka.png",
-		"title": "Pramuka Kota Pekalongan",
-		"desc": "Official digital scout movement portal of Kwarcab Pekalongan featuring member registries, event agendas, and news broadcasts",
-		"url": "https://pramukakotapekalongan.or.id",
-		"detail": "/detail/pramuka",
-		"category": "web,government",
-		"tag": "Community / Portal",
-		"date": "2026-03-20",
-		"mark": false
 	}
 ]
