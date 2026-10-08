@@ -120,9 +120,8 @@ import { certificates } from '../data/certificates';
 										alt={cert.title}
 										loading="lazy"
 										class="cert-thumb"
-										style="width: 120px; max-width: 120px; aspect-ratio: 1683 / 1190; object-fit: cover; border-radius: 6px; display: block;"
+										style="width: 100%; height: auto; aspect-ratio: 1683 / 1190; object-fit: contain; display: block;"
 									/>
-									<span class="cert-thumb-badge">PDF ↗</span>
 								</a>
 
 								<div class="cert-details">
@@ -287,9 +286,9 @@ import { certificates } from '../data/certificates';
 
 	.cert-card {
 		display: flex;
-		align-items: flex-start;
-		gap: 16px;
-		padding: 14px 16px;
+		align-items: center;
+		gap: 18px;
+		padding: 14px 18px;
 		border: 1px solid var(--color-700);
 		border-radius: 10px;
 		background: var(--color-900);
@@ -305,40 +304,28 @@ import { certificates } from '../data/certificates';
 	.cert-thumb-link {
 		position: relative;
 		display: block;
-		width: 120px;
+		width: 140px;
+		min-width: 140px;
+		max-width: 140px;
 		flex-shrink: 0;
 		border-radius: 6px;
 		overflow: hidden;
 		border: 1px solid var(--color-700);
-		background: #000;
+		background: var(--color-900);
 		text-decoration: none !important;
 	}
 
 	.cert-thumb {
 		width: 100%;
-		height: 100%;
+		height: auto;
 		aspect-ratio: 1683 / 1190;
-		object-fit: cover;
+		object-fit: contain;
 		display: block;
 		transition: transform 0.25s ease;
 	}
 
 	.cert-thumb-link:hover .cert-thumb {
-		transform: scale(1.06);
-	}
-
-	.cert-thumb-badge {
-		position: absolute;
-		bottom: 4px;
-		right: 4px;
-		background: rgba(0, 0, 0, 0.75);
-		color: #fff;
-		font-size: 9px;
-		font-weight: 600;
-		padding: 1px 5px;
-		border-radius: 3px;
-		letter-spacing: 0.3px;
-		pointer-events: none;
+		transform: scale(1.05);
 	}
 
 	.cert-details {
