@@ -19,6 +19,7 @@ export const nav: Nav = {
     items: [
         { label: 'Home', href: '/', target: '_self' },
         { label: 'Projects', href: '/project', target: '_self' },
+        { label: 'Design', href: '/design', target: '_self' },
         { label: 'About', href: '/about', target: '_self' },
         { label: 'Blog', href: '/blog', target: '_self' },
     ],
@@ -33,9 +34,9 @@ interface SeoTdk {
 }
 
 export const homeTdk: SeoTdk = {
-	title: 'Febiadi Wisnu Akbar | Full-stack Developer & Security Enthusiast',
-	description: 'Portfolio of Febiadi Wisnu Akbar — Software Engineer specializing in scalable full-stack architectures and security-focused software development.',
-	keywords: 'Febiadi Wisnu Akbar, sotostack, Software Engineer, Full-stack Developer, Next.js, TypeScript, React, Flutter, Cybersecurity, Bug Bounty, Web Security'
+	title: 'Febiadi Wisnu Akbar | Software Engineer & Graphic Designer',
+	description: 'Portfolio of Febiadi Wisnu Akbar — Software Engineer & Graphic Designer blending scalable full-stack web architectures, cybersecurity, and visual art direction.',
+	keywords: 'Febiadi Wisnu Akbar, Software Engineer, Graphic Designer, Full-stack Developer, Next.js, TypeScript, Poster Design, Typography, Visual Art, Cybersecurity'
 }
 
 export const blogTdk: SeoTdk = {
@@ -46,8 +47,14 @@ export const blogTdk: SeoTdk = {
 
 export const aboutTdk: SeoTdk = {
 	title: 'About | Febiadi Wisnu Akbar',
-	description: 'Programmer at Dinkominfo Pekalongan specializing in web development, mobile applications, and cybersecurity research.',
-	keywords: 'Febiadi Wisnu Akbar, About, Experience, Full-stack Developer, Dinkominfo Pekalongan, Indonesia'
+	description: 'Programmer and Graphic Designer at Dinkominfo Pekalongan specializing in web development, mobile applications, cybersecurity, and visual art direction.',
+	keywords: 'Febiadi Wisnu Akbar, About, Experience, Full-stack Developer, Graphic Designer, Dinkominfo Pekalongan, Indonesia'
+}
+
+export const designTdk: SeoTdk = {
+	title: 'Graphic Design & Artworks | Febiadi Wisnu Akbar',
+	description: 'A curated visual design portfolio featuring poster art, typography compositions, character graphics, and sports artwork by Febiadi Wisnu Akbar.',
+	keywords: 'Febiadi Wisnu Akbar, Graphic Design, Poster Design, Typography, Anime Graphics, Sports Poster, Yoasobi, Bocchi the Rock, Visual Art, Photoshop'
 }
 
 export const projectTdk: SeoTdk = {
@@ -95,24 +102,28 @@ interface PageTag {
 	about: string
 	blog: string
 	project: string
+	design: string
 }
 export const pageTag: PageTag = {
 	index: '',
 	about: 'ABOUT',
 	blog: 'BLOG',
-	project: 'PROJECTS'
+	project: 'PROJECTS',
+	design: 'DESIGN'
 }
 
 interface PageDescription {
 	index?: string
 	project?: string
+	design?: string
 	blog?: string
 	about?: string
 }
 export const pageDescription: PageDescription = {
-	index: "Software Engineer specializing in scalable full-stack web & mobile architectures with a security-first engineering mindset. Passionate about building high-performance systems and resilient digital experiences.",
+	index: "Software Engineer & Graphic Designer specializing in scalable full-stack web architectures, cybersecurity, and visual design. Blending technical engineering with creative aesthetics.",
 	project: "A complete inventory of tools, applications, and source repositories I've engineered.",
-	about: 'Full-stack Developer and Security Enthusiast building premium digital experiences and secure systems.',
+	design: "A curated collection of poster designs, typography experiments, anime graphics, and sports artwork.",
+	about: 'Full-stack Developer, Security Enthusiast & Graphic Designer building secure digital experiences and expressive visual artwork.',
 	blog: 'Articles, write-ups, and technical notes on web architecture, software engineering, and cybersecurity.',
 }
 

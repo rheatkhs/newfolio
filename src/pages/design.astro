@@ -1,0 +1,659 @@
+---
+import BlogPostLayout from "../layouts/BlogPostLayout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import { pageTag, pageDescription, designTdk } from "../data/content";
+import { designItems, designCategories } from "../data/design";
+---
+
+<BlogPostLayout
+	title={designTdk.title || "Design & Artworks | Febiadi Wisnu Akbar"}
+	description={designTdk.description || ""}
+	keywords={designTdk.keywords || ""}
+>
+	<div class="post">
+		<main class="post-wrapper design-page">
+			<SectionHeader
+				tag={pageTag.design}
+				description={pageDescription.design}
+			>
+				Design & Artworks
+			</SectionHeader>
+
+			<!-- Filter categories -->
+			<div class="design-filter-section border-top">
+				<div class="filter-pills">
+					<button class="filter-pill active" data-filter="all">
+						All Artworks <span class="pill-count">({designItems.length})</span>
+					</button>
+					{designCategories.filter(c => c.slug !== 'all').map((cat) => (
+						<button class="filter-pill" data-filter={cat.slug}>
+							{cat.label}
+						</button>
+					))}
+				</div>
+			</div>
+
+			<!-- Design Gallery Grid -->
+			<div class="design-grid" id="design-grid">
+				{designItems.map((item, index) => (
+					<article 
+						class="design-card" 
+						data-category={item.categorySlug}
+						data-id={item.id}
+					>
+						<div class="card-meta">
+							<span class="meta-tag">- {item.category.toUpperCase()} -</span>
+							<span class="meta-year">({item.year})</span>
+						</div>
+
+						<div class="card-image-wrap js-lightbox-trigger" data-index={index}>
+							<img 
+								src={item.image} 
+								alt={item.title} 
+								loading="lazy" 
+								class="card-image"
+							/>
+							<div class="card-overlay">
+								<span class="zoom-badge">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<circle cx="11" cy="11" r="8"></circle>
+										<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+										<line x1="11" y1="8" x2="11" y2="14"></line>
+										<line x1="8" y1="11" x2="14" y2="11"></line>
+									</svg>
+									View Artwork
+								</span>
+							</div>
+						</div>
+
+						<div class="card-caption">
+							<div class="card-header-row">
+								<h3 class="card-title">{item.title}</h3>
+								<button class="expand-btn js-lightbox-trigger" data-index={index} aria-label={`Expand ${item.title}`}>
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<polyline points="15 3 21 3 21 9"></polyline>
+										<polyline points="9 21 3 21 3 15"></polyline>
+										<line x1="21" y1="3" x2="14" y2="10"></line>
+										<line x1="3" y1="21" x2="10" y2="14"></line>
+									</svg>
+								</button>
+							</div>
+							<p class="card-subtitle">{item.subtitle}</p>
+							<p class="card-desc">{item.description}</p>
+							<div class="card-tags">
+								{item.tags.map((tag) => (
+									<span class="tag-pill">{tag}</span>
+								))}
+							</div>
+						</div>
+					</article>
+				))}
+			</div>
+		</main>
+	</div>
+
+	<!-- Lightbox Modal -->
+	<div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog">
+		<div class="lightbox-backdrop"></div>
+		<div class="lightbox-container">
+			<button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<line x1="18" y1="6" x2="6" y2="18"></line>
+					<line x1="6" y1="6" x2="18" y2="18"></line>
+				</svg>
+			</button>
+
+			<button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous artwork">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+					<polyline points="15 18 9 12 15 6"></polyline>
+				</svg>
+			</button>
+
+			<div class="lightbox-content">
+				<div class="lightbox-media">
+					<img id="lightbox-img" src="" alt="" />
+				</div>
+				<div class="lightbox-info">
+					<div class="info-meta">
+						<span id="lightbox-category" class="info-cat"></span>
+						<span id="lightbox-year" class="info-year"></span>
+					</div>
+					<h2 id="lightbox-title" class="info-title"></h2>
+					<p id="lightbox-subtitle" class="info-subtitle"></p>
+					<p id="lightbox-desc" class="info-desc"></p>
+					<div id="lightbox-tags" class="info-tags"></div>
+				</div>
+			</div>
+
+			<button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next artwork">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+					<polyline points="9 18 15 12 9 6"></polyline>
+				</svg>
+			</button>
+		</div>
+	</div>
+</BlogPostLayout>
+
+<script is:inline define:vars={{ designsData: designItems }}>
+	document.addEventListener('DOMContentLoaded', () => {
+		// Filter Functionality
+		const filterButtons = document.querySelectorAll('.filter-pill');
+		const cards = document.querySelectorAll('.design-card');
+
+		filterButtons.forEach(btn => {
+			btn.addEventListener('click', () => {
+				filterButtons.forEach(b => b.classList.remove('active'));
+				btn.classList.add('active');
+
+				const targetFilter = btn.getAttribute('data-filter');
+
+				cards.forEach(card => {
+					const category = card.getAttribute('data-category');
+					if (targetFilter === 'all' || category === targetFilter) {
+						card.style.display = 'flex';
+						setTimeout(() => {
+							card.style.opacity = '1';
+							card.style.transform = 'translateY(0)';
+						}, 20);
+					} else {
+						card.style.opacity = '0';
+						card.style.transform = 'translateY(12px)';
+						setTimeout(() => {
+							card.style.display = 'none';
+						}, 250);
+					}
+				});
+			});
+		});
+
+		// Lightbox Functionality
+		const modal = document.getElementById('lightbox-modal');
+		const backdrop = modal?.querySelector('.lightbox-backdrop');
+		const closeBtn = document.getElementById('lightbox-close');
+		const prevBtn = document.getElementById('lightbox-prev');
+		const nextBtn = document.getElementById('lightbox-next');
+		const imgEl = document.getElementById('lightbox-img');
+		const titleEl = document.getElementById('lightbox-title');
+		const subtitleEl = document.getElementById('lightbox-subtitle');
+		const descEl = document.getElementById('lightbox-desc');
+		const catEl = document.getElementById('lightbox-category');
+		const yearEl = document.getElementById('lightbox-year');
+		const tagsEl = document.getElementById('lightbox-tags');
+
+		let currentIndex = 0;
+
+		function openLightbox(index) {
+			currentIndex = index;
+			updateModalContent();
+			modal?.classList.add('open');
+			document.body.style.overflow = 'hidden';
+		}
+
+		function closeLightbox() {
+			modal?.classList.remove('open');
+			document.body.style.overflow = '';
+		}
+
+		function updateModalContent() {
+			const item = designsData[currentIndex];
+			if (!item) return;
+
+			if (imgEl) {
+				imgEl.src = item.image;
+				imgEl.alt = item.title;
+			}
+			if (titleEl) titleEl.textContent = item.title;
+			if (subtitleEl) subtitleEl.textContent = item.subtitle;
+			if (descEl) descEl.textContent = item.description;
+			if (catEl) catEl.textContent = item.category.toUpperCase();
+			if (yearEl) yearEl.textContent = '(' + item.year + ')';
+
+			if (tagsEl) {
+				tagsEl.innerHTML = '';
+				item.tags.forEach(t => {
+					const s = document.createElement('span');
+					s.className = 'tag-pill';
+					s.textContent = t;
+					tagsEl.appendChild(s);
+				});
+			}
+		}
+
+		function showPrev() {
+			currentIndex = (currentIndex - 1 + designsData.length) % designsData.length;
+			updateModalContent();
+		}
+
+		function showNext() {
+			currentIndex = (currentIndex + 1) % designsData.length;
+			updateModalContent();
+		}
+
+		// Trigger bindings
+		document.querySelectorAll('.js-lightbox-trigger').forEach(trigger => {
+			trigger.addEventListener('click', (e) => {
+				e.preventDefault();
+				const idx = parseInt(trigger.getAttribute('data-index') || '0', 10);
+				openLightbox(idx);
+			});
+		});
+
+		closeBtn?.addEventListener('click', closeLightbox);
+		backdrop?.addEventListener('click', closeLightbox);
+		prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+		nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+
+		// Keyboard controls
+		document.addEventListener('keydown', (e) => {
+			if (!modal?.classList.contains('open')) return;
+			if (e.key === 'Escape') closeLightbox();
+			if (e.key === 'ArrowLeft') showPrev();
+			if (e.key === 'ArrowRight') showNext();
+		});
+	});
+</script>
+
+<style lang="scss">
+.design-page {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.design-filter-section {
+	margin-top: 1.5rem;
+	padding-top: 1.25rem;
+	display: flex;
+	justify-content: center;
+}
+
+.filter-pills {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.filter-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	border-radius: 9999px;
+	background-color: var(--filter-bg);
+	border: 1px solid var(--border);
+	color: var(--color-200);
+	font-family: var(--font-body);
+	font-size: 13.5px;
+	padding: 8px 18px;
+	cursor: pointer;
+	line-height: 1;
+	transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+	.pill-count {
+		font-size: 12px;
+		opacity: 0.7;
+	}
+
+	&:hover {
+		background-color: var(--filter-bg-hover);
+		color: var(--color-100);
+	}
+
+	&.active {
+		background: var(--filter-bg-active);
+		color: var(--filter-color-active);
+		font-weight: 500;
+		border-color: var(--filter-bg-active);
+	}
+}
+
+.design-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 32px;
+	margin-top: 2.5rem;
+	width: 100%;
+
+	@media (max-width: 860px) {
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
+}
+
+.design-card {
+	display: flex;
+	flex-direction: column;
+	background: rgba(255, 255, 255, 0.02);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 16px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+	transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+	&:hover {
+		border-color: var(--color-400);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+		transform: translateY(-3px);
+	}
+}
+
+.card-meta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 12px;
+	font-size: 12px;
+	color: var(--color-300);
+	letter-spacing: 0.5px;
+
+	.meta-tag {
+		font-weight: 500;
+	}
+}
+
+.card-image-wrap {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	border-radius: 8px;
+	overflow: hidden;
+	background: #0d1117;
+	cursor: pointer;
+
+	.card-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+		display: block;
+	}
+
+	.card-overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.45);
+		backdrop-filter: blur(2px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.zoom-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		background: rgba(16, 16, 16, 0.85);
+		color: #fff;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		padding: 10px 20px;
+		border-radius: 9999px;
+		font-size: 13.5px;
+		font-weight: 500;
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+		transform: scale(0.9);
+		transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	}
+
+	&:hover {
+		.card-image {
+			transform: scale(1.04);
+		}
+		.card-overlay {
+			opacity: 1;
+		}
+		.zoom-badge {
+			transform: scale(1);
+		}
+	}
+}
+
+.card-caption {
+	margin-top: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.card-header-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card-title {
+	font-size: 18px;
+	font-weight: 600;
+	color: var(--color-100);
+	letter-spacing: -0.2px;
+	margin: 0;
+}
+
+.expand-btn {
+	background: transparent;
+	border: 1px solid var(--border);
+	color: var(--color-300);
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.25s ease;
+
+	&:hover {
+		border-color: var(--color-200);
+		color: var(--color-100);
+		background: rgba(255, 255, 255, 0.05);
+		transform: scale(1.08);
+	}
+}
+
+.card-subtitle {
+	font-size: 13.5px;
+	font-weight: 500;
+	color: var(--color-300);
+	margin: 0;
+}
+
+.card-desc {
+	font-size: 13px;
+	color: var(--color-400);
+	line-height: 1.55;
+	margin: 4px 0 8px;
+}
+
+.card-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.tag-pill {
+	display: inline-block;
+	background: rgba(128, 128, 128, 0.1);
+	border: 1px solid var(--border);
+	color: var(--color-300);
+	font-size: 11px;
+	font-weight: 500;
+	padding: 3px 8px;
+	border-radius: 4px;
+	letter-spacing: 0.5px;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease;
+
+	&.open {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+.lightbox-backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.85);
+	backdrop-filter: blur(12px);
+}
+
+.lightbox-container {
+	position: relative;
+	z-index: 10;
+	width: 90vw;
+	max-width: 1050px;
+	max-height: 90vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.lightbox-content {
+	display: flex;
+	background: var(--bg-card, #14171f);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+	max-height: 85vh;
+	width: 100%;
+
+	@media (max-width: 768px) {
+		flex-direction: column;
+		max-height: 88vh;
+		overflow-y: auto;
+	}
+}
+
+.lightbox-media {
+	flex: 1.2;
+	background: #090b10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 16px;
+
+	img {
+		max-width: 100%;
+		max-height: 75vh;
+		object-fit: contain;
+		border-radius: 8px;
+	}
+}
+
+.lightbox-info {
+	flex: 0.9;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background: var(--filter-bg);
+	color: var(--color-100);
+
+	.info-meta {
+		display: flex;
+		gap: 10px;
+		font-size: 12px;
+		letter-spacing: 0.5px;
+		color: var(--color-400);
+		margin-bottom: 8px;
+	}
+
+	.info-title {
+		font-size: 24px;
+		font-weight: 700;
+		color: var(--color-100);
+		margin-bottom: 4px;
+	}
+
+	.info-subtitle {
+		font-size: 15px;
+		font-weight: 500;
+		color: var(--color-300);
+		margin-bottom: 16px;
+	}
+
+	.info-desc {
+		font-size: 14px;
+		color: var(--color-300);
+		line-height: 1.6;
+		margin-bottom: 20px;
+	}
+
+	.info-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	@media (max-width: 768px) {
+		padding: 20px;
+	}
+}
+
+.lightbox-close {
+	position: absolute;
+	top: -48px;
+	right: 0;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	color: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.2s ease;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.25);
+		transform: rotate(90deg);
+	}
+}
+
+.lightbox-nav {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(20, 24, 33, 0.85);
+	backdrop-filter: blur(8px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	color: #fff;
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	z-index: 20;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.2);
+		transform: translateY(-50%) scale(1.1);
+	}
+}
+
+.lightbox-prev {
+	left: -24px;
+}
+
+.lightbox-next {
+	right: -24px;
+}
+</style>
