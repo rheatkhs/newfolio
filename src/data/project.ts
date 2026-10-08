@@ -22,6 +22,16 @@ export const projectItems: ProjectItem[] = [
 		tags: ['AI', 'MULTI-AGENT', 'QDRANT RAG', 'LEGAL TECH', 'LARAVEL']
 	},
 	{
+		title: "NeoStream",
+		title_en: "Modern Web-Based IPTV & HLS Streaming Platform",
+		description: "A sleek, browser-native IPTV streaming client capable of parsing remote and local M3U playlists, streaming low-latency HLS/m3u8 live video feeds, rendering EPG electronic program guides, and bypassing CORS restrictions seamlessly.",
+		date: "2026-03-27",
+		detail: "/detail/neostream",
+		url: "https://neostream-inky.vercel.app",
+		cover: ['cover/cover-neostream.png'],
+		tags: ['HLS.JS', 'IPTV', 'REACT', 'TAILWIND', 'M3U STREAMING']
+	},
+	{
 		title: "Ferrari 296 GT3",
 		title_en: "Interactive 3D WebGL Digital Showcase & Configurator",
 		description: "An immersive real-time 3D web experience dedicated to the Ferrari 296 GT3 racing machine, featuring photorealistic PBR materials, custom GLSL shaders, camera choreography, and interactive aerodynamics breakdown.",

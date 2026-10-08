@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import DetailHeader from "../../components/DetailHeader.astro";
+import DetailPostLayout from "../../layouts/DetailPostLayout.astro";
+import CallToAction from "../../components/CallToAction.astro";
+import coverImage from "../../assets/projects/cover/cover-neostream.png";
+---
+<DetailPostLayout
+	title="NeoStream - Modern Web-Based IPTV & HLS Streaming Platform | Febiadi Wisnu Akbar"
+	description="NeoStream is a high-performance browser-native IPTV player supporting remote & local M3U playlists, low-latency HLS/m3u8 streaming, and CORS proxy bypass."
+	keywords="NeoStream, IPTV Player, HLS Streaming, M3U Playlist, EPG XML TV, React, Tailwind, CORS Proxy, Febiadi Wisnu Akbar"
+>
+	<div class="post">
+		<main class="post-wrapper">
+			<DetailHeader
+				tag="WEB STREAMING & IPTV ARCHITECTURE"
+				description="Browser-Native IPTV Player & Live Stream Engine">
+				<h1 class="font-type">
+					NeoStream
+				</h1>
+			</DetailHeader>
+
+			<section>
+				<div class="content">
+					<div class="row desc">
+						<div class="col-1a">
+							<h3 class="post-title">Project Overview</h3>
+							<p class="post-desc">
+								<strong>NeoStream</strong> is a modern, high-performance web-based IPTV player and live media streaming client engineered to deliver seamless TV and video playback directly inside the browser. By eliminating the necessity of bulky native desktop players, NeoStream empowers users to import M3U/M3U8 playlists—either via remote HTTP links or local disk uploads—and instantly stream live global television channels and video-on-demand content.
+							</p>
+
+							<h3 class="post-title" style="margin-top:2rem;">Core Architecture & Capabilities</h3>
+							<ul class="achievement-list">
+								<li><strong>High-Throughput M3U/M3U8 Playlist Parser:</strong> Robust streaming parser capable of ingesting massive playlists with tens of thousands of channel entries, extracting channel metadata, logos (tvg-logo), category groups (group-title), and stream URIs without UI lockup.</li>
+								<li><strong>HLS.js Hardware-Accelerated Playback:</strong> Native integration with the HLS.js streaming engine, delivering sub-second startup times, adaptive bitrate switching (ABR), audio track cycling, and buffer health optimization.</li>
+								<li><strong>Integrated CORS Proxy Bypass:</strong> Overcomes browser-level Cross-Origin Resource Sharing (CORS) security restrictions through an optional, one-click proxy routing pipeline (corsproxy.io) to ensure maximum stream compatibility.</li>
+								<li><strong>EPG (Electronic Program Guide) Support:</strong> XML TV guide integration enabling live schedule tracking, upcoming broadcast overviews, and contextual program descriptions.</li>
+								<li><strong>Cyberpunk Dark UI:</strong> Precision-crafted interface built with dark-mode aesthetic, atmospheric red ambient glows, Lucide icons, and responsive layouts across desktop, tablet, and mobile browsers.</li>
+							</ul>
+
+							<h3 class="post-title" style="margin-top:2rem;">Engineering & Performance Highlights</h3>
+							<ul class="achievement-list">
+								<li>Constructed using React, TypeScript, and modern CSS utility architectures for high responsiveness and maintainability.</li>
+								<li>Virtualized channel catalog rendering guaranteeing fluid 60 FPS navigation even when browsing playlists containing over 20,000 channels.</li>
+								<li>Strict zero-tracking, privacy-first client-side architecture where credentials, playlist URLs, and media streams are processed entirely on the client without third-party telemetry.</li>
+							</ul>
+						</div>
+
+						<div class="col-1a" style="margin-top:2rem;">
+							<div class="btn">
+								<CallToAction href="https://neostream-inky.vercel.app" target="_blank">
+									Launch NeoStream
+								</CallToAction>
+								<CallToAction href="/project" target="_self">
+									Back to Projects
+								</CallToAction>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="preview">
+				<picture class="picture">
+					<Image src={coverImage} alt="NeoStream IPTV Player Dashboard Preview" loading="lazy" decoding="async" />
+				</picture>
+			</section>
+		</main>
+	</div>
+</DetailPostLayout>
+
+<style>
+.achievement-list {
+	list-style: disc;
+	padding-left: 1.5rem;
+	margin: 1rem 0;
+	color: var(--color-200);
+	line-height: 1.8;
+}
+.achievement-list li {
+	margin-bottom: 0.5rem;
+}
+.picture img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	border: 1px solid var(--color-700);
+}
+</style>
