@@ -10,6 +10,19 @@
 		"tag": "Government / Portal",
 		"date": "2026-03-25",
 		"mark": true
+	},
+	{
+		"id": "2",
+		"cover": "/assets/cover/cover-pramuka.png",
+		"title": "Pramuka Kota Pekalongan",
+		"desc": "Official digital scout movement portal of Kwarcab Pekalongan featuring member registries, event agendas, and news broadcasts",
+		"url": "https://pramukakotapekalongan.or.id",
+		"detail": "/detail/pramuka",
+		"category": "web,recommend,community",
+		"tag": "Community / Portal",
+		"date": "2026-03-20",
+		"mark": true
 	}
 ]
+
 

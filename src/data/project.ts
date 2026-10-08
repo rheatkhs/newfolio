@@ -21,5 +21,15 @@ export const projectItems: ProjectItem[] = [
 		cover: ['cover/cover-ppid.png'],
 		tags: ['LARAVEL', 'GOVERNMENT', 'PUBLIC SERVICE', 'BOOTSTRAP']
 	},
+	{
+		title: "Pramuka Kota Pekalongan",
+		title_en: "Official Scout Movement Information & Registry Portal",
+		description: "Official digital portal of Kwarcab Pekalongan serving as the central scouting communications and leadership registry hub with event management and news distribution.",
+		date: "2026-03-20",
+		detail: "/detail/pramuka",
+		url: "https://pramukakotapekalongan.or.id",
+		cover: ['cover/cover-pramuka.png'],
+		tags: ['LARAVEL', 'TAILWIND', 'COMMUNITY', 'ALPINE.JS']
+	},
 ];
 

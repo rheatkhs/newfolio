@@ -1,0 +1,90 @@
+---
+import { Image } from "astro:assets";
+import DetailHeader from "../../components/DetailHeader.astro";
+import DetailPostLayout from "../../layouts/DetailPostLayout.astro";
+import CallToAction from "../../components/CallToAction.astro";
+import coverImage from "../../assets/projects/cover/cover-pramuka.png";
+---
+<DetailPostLayout
+	title="Kwarcab Pramuka Kota Pekalongan - Official Scout Movement Portal | Febiadi Wisnu Akbar"
+	description="Official digital portal of Kwartir Cabang Gerakan Pramuka Kota Pekalongan, featuring scout registry management, news broadcasts, event agendas, and unit telemetry."
+	keywords="Pramuka Kota Pekalongan, Kwarcab Pekalongan, Gerakan Pramuka, Portal Pramuka, Laravel, Tailwind, Febiadi Wisnu Akbar"
+>
+	<div class="post">
+		<main class="post-wrapper">
+			<DetailHeader
+				tag="COMMUNITY & ORGANIZATION"
+				description="Official Municipal Scout Movement Portal & Information Management Hub">
+				<h1 class="font-type">
+					Pramuka Kota Pekalongan
+				</h1>
+			</DetailHeader>
+
+			<section>
+				<div class="content">
+					<div class="row desc">
+						<div class="col-1a">
+							<h3 class="post-title">Project Overview</h3>
+							<p class="post-desc">
+								Portal Resmi Kwarcab Gerakan Pramuka Kota Pekalongan serves as the central digital communications and administrative hub for the Scout Movement across Pekalongan City. Engineered to modernize youth organization management, the portal unifies scouting information, regional agenda schedules, verified news bulletins, and certified leadership telemetry for scouts, educators, and the general public.
+							</p>
+
+							<h3 class="post-title" style="margin-top:2rem;">Core Platform Capabilities</h3>
+							<ul class="achievement-list">
+								<li><strong>Scout Registry & Master Directory (Pusat Data):</strong> Centralized management portal tracking licensed scout masters (Pembina Terlisensi), certified trainers (Pelatih Pramuka), and school-based scouting units (Gugus Depan).</li>
+								<li><strong>Event & Agenda Management:</strong> Interactive schedule calendar broadcasting municipal jamborees, badge assessments, leadership courses, and civic volunteer operations.</li>
+								<li><strong>Newsroom & Editorial Distribution (Warta Berita):</strong> Dynamic content publishing system equipped with categorical tagging, full-text search, and automated OpenGraph preview cards for social media distribution.</li>
+								<li><strong>Institutional Directory & Governance:</strong> Transparent visualization of Kwarcab leadership structure, scout council divisions, and official operational guidelines.</li>
+								<li><strong>Document & Media Repository:</strong> Centralized digital archives facilitating instant downloads for official scouting circulars, guidelines, and high-resolution event photography.</li>
+							</ul>
+
+							<h3 class="post-title" style="margin-top:2rem;">Engineering & Performance Highlights</h3>
+							<ul class="achievement-list">
+								<li>Engineered a high-performance modern frontend utilizing Tailwind CSS and lightweight Alpine.js micro-interactions.</li>
+								<li>Integrated Schema.org JSON-LD structured data and semantic metadata, maximizing search engine discoverability and social messaging richness.</li>
+								<li>Designed an accessible, mobile-first responsive layout with custom brand aesthetics honoring official Indonesian Scout Movement guidelines.</li>
+								<li>Optimized asset pipelines and database indexing to deliver lightning-fast load times even under high-traffic municipal event announcements.</li>
+							</ul>
+						</div>
+
+						<div class="col-1a" style="margin-top:2rem;">
+							<div class="btn">
+								<CallToAction href="https://pramukakotapekalongan.or.id" target="_blank">
+									Visit Live Portal
+								</CallToAction>
+								<CallToAction href="/project" target="_self">
+									Back to Projects
+								</CallToAction>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="preview">
+				<picture class="picture">
+					<Image src={coverImage} alt="Pramuka Kota Pekalongan Portal Preview" loading="lazy" decoding="async" />
+				</picture>
+			</section>
+		</main>
+	</div>
+</DetailPostLayout>
+
+<style>
+.achievement-list {
+	list-style: disc;
+	padding-left: 1.5rem;
+	margin: 1rem 0;
+	color: var(--color-200);
+	line-height: 1.8;
+}
+.achievement-list li {
+	margin-bottom: 0.5rem;
+}
+.picture img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	border: 1px solid var(--color-700);
+}
+</style>
