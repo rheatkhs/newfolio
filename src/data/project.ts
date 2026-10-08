@@ -12,43 +12,63 @@ export interface ProjectItem {
 
 export const projectItems: ProjectItem[] = [
 	{
-		title: "Valentine's Day 3D Assets",
-		title_en: "Blender 3D Asset Library",
-		description: "A comprehensive 3D asset pack designed for web applications and seasonal campaigns.",
-		date: "2024-10-15",
-		detail: "/detail/free-3d-valentines-assets/",
-		url: "https://valentine.uiuxdeck.com/",
-		cover: [
-			'free-3d-valentines-assets/01.jpg',
-			'free-3d-valentines-assets/02.jpg',
-			'free-3d-valentines-assets/03.jpg',
-			'free-3d-valentines-assets/04.jpg',
-		],
-		tags: ['3D', 'WEB', 'ASSETS']
-	},
-	{
-		title: "Online Todo List Application",
-		title_en: "Productivity Web App",
-		description: "Lightweight, responsive task management tool with browser local storage persistence.",
-		date: "2024-10-15",
-		detail: "/detail/todo",
-		url: "https://todo.uiineed.com/",
+		title: "Warung Jus",
+		title_en: "Neobrutalist Point of Sale System",
+		description: "A Neobrutalist POS and real-time sales reporting system designed for local juice vendors, featuring order processing, transaction logging, and QRIS payment integration.",
+		date: "2026-03-15",
+		detail: "/detail/warung-jus",
+		url: "https://warung-jus.vercel.app",
 		cover: ['cover/cover-todo.jpg'],
-		tags: ['WEB', 'PRODUCTIVITY', 'JS']
+		tags: ['NEXT.JS', 'TAILWIND', 'POS', 'QRIS']
 	},
 	{
-		title: "Tink Travel Life Journal",
-		title_en: "Mobile-First Journal App",
-		description: "Interactive travel notes and photo diary web application with smooth micro-interactions.",
-		date: "2024-10-15",
-		url: "https://travellife.zeabur.app/",
-		detail: "/detail/tinklife",
-		cover: [
-			'travel/01.jpg',
-			'travel/02.jpg',
-			'travel/03.jpg',
-			'travel/04.jpg'
-		],
-		tags: ['WEB', 'MOBILE', 'UI']
+		title: "KMNF",
+		title_en: "High-Performance URL Shortener",
+		description: "A fast, reliable, and secure URL shortening microservice capable of handling heavy production redirect requests with sub-15ms latency and real-time geo-analytics.",
+		date: "2026-03-17",
+		detail: "/detail/kmnf",
+		url: "https://kmnf.site",
+		cover: ['cover/cover-3d-cloud.jpg'],
+		tags: ['NODE.JS', 'REDIS', 'EXPRESS', 'REACT']
+	},
+	{
+		title: "BugScribe",
+		title_en: "Automated Bug Bounty Reporting Tool",
+		description: "Streamlines the workflow of documenting and submitting security vulnerabilities to platforms like HackerOne and Bugcrowd with dynamic CVSS v3.1 calculator and OWASP templates.",
+		date: "2026-02-20",
+		detail: "/detail/bugscribe",
+		url: "https://bugscribe.vercel.app",
+		cover: ['cover/cover-3d-logo.jpg'],
+		tags: ['CYBERSECURITY', 'BUG BOUNTY', 'REACT', 'CVSS']
+	},
+	{
+		title: "Resumix",
+		title_en: "Customizable Resume & CV Builder",
+		description: "A modern, highly customizable CV and resume builder designed to help job seekers create professional applications in minutes with clean typography.",
+		date: "2026-01-10",
+		detail: "https://resumix.kmnf.site",
+		url: "https://resumix.kmnf.site",
+		cover: ['cover/cover-3d-icons.jpg'],
+		tags: ['REACT', 'PRODUCTIVITY', 'RESUME']
+	},
+	{
+		title: "HALOBOX",
+		title_en: "Digital Photobooth & Memory Studio",
+		description: "A digital photobooth and memory creation platform offering customizable frames, instant captures, and high-quality digital memories.",
+		date: "2025-11-05",
+		detail: "https://halobox.vercel.app",
+		url: "https://halobox.vercel.app",
+		cover: ['travel/01.jpg', 'travel/02.jpg'],
+		tags: ['WEB', 'CREATIVE', 'PHOTOBOOTH']
+	},
+	{
+		title: "SotoPremium",
+		title_en: "Digital Subscription Marketplace Catalog",
+		description: "A premium account marketplace catalog providing secure and verified access to digital subscriptions with direct WhatsApp ordering.",
+		date: "2025-09-12",
+		detail: "https://sotopremium.wojistudio.id",
+		url: "https://sotopremium.wojistudio.id",
+		cover: ['cover/cover-todo.jpg'],
+		tags: ['MARKETPLACE', 'CATALOG', 'E-COMMERCE']
 	},
 ];

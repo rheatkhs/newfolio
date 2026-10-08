@@ -3,13 +3,13 @@ import { Image } from 'astro:assets';
 import BlogPostLayout from "../layouts/BlogPostLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import CallToAction from "../components/CallToAction.astro";
-import {pageTag, pageDescription,aboutTdk} from '../data/content';
+import {pageTag, pageDescription, aboutTdk} from '../data/content';
 import myPortrait from "../assets/portrait.jpg";
 ---
 <BlogPostLayout
 	title={aboutTdk.title || ''}
-	description = {aboutTdk.description || ''}
-	keywords = {aboutTdk.keywords || ''}
+	description={aboutTdk.description || ''}
+	keywords={aboutTdk.keywords || ''}
 >
 
 	<div class="post">
@@ -19,39 +19,110 @@ import myPortrait from "../assets/portrait.jpg";
 				description={pageDescription.about}>
 				 About Me
 			</SectionHeader>
+
 			<section class="border-top" style="padding-top: 2rem;">
 				<div class="content">
 					<div>
-						<Image src={myPortrait} alt="portrait" width="88" height="88" class="portrait">
+						<Image src={myPortrait} alt="Febiadi Wisnu Akbar portrait" width="88" height="88" class="portrait">
 					</div>
 					<p>
-						I am <strong style="font-size:1.2em">Febiadi Wisnu Akbar</strong>, a Software Engineer from Pekalongan, Indonesia. I focus on building reliable, performant web applications and software systems with clean architecture.
+						I am <strong style="font-size:1.2em">Febiadi Wisnu Akbar</strong>, a Programmer at <strong>DINKOMINFO Kota Pekalongan</strong> and a Full-stack Developer & Security Enthusiast from Pekalongan, Indonesia.
 					</p>
 					<p>
-						I enjoy tackling complex engineering problems, designing scalable digital solutions, and continuously expanding my technical knowledge across the modern software stack.
+						I specialize in building secure, scalable web and mobile applications with a keen eye for software craftsmanship, system architecture, and cybersecurity research.
 					</p>
-
 				</div>
 			</section>
+
 			<section>
-				<h3 class="post-title">Beyond Engineering</h3>
+				<h3 class="post-title">Technical Expertise</h3>
+				<div class="content">
+					<div class="skills-grid">
+						<div class="skill-card">
+							<h4>Web Development</h4>
+							<p>Building high-performance, accessible applications with Next.js, React, Node.js, Astro, and PHP.</p>
+						</div>
+						<div class="skill-card">
+							<h4>Mobile Development</h4>
+							<p>Crafting cross-platform mobile experiences with fluid interfaces using Flutter and Dart.</p>
+						</div>
+						<div class="skill-card">
+							<h4>Security Research</h4>
+							<p>Bug bounty hunting on platforms like HackerOne and Bugcrowd, local government security audits, and OWASP modeling.</p>
+						</div>
+						<div class="skill-card">
+							<h4>Backend & Systems</h4>
+							<p>Architecting robust REST APIs, caching layers with Redis, and resilient database schemas.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h3 class="post-title">Experience</h3>
+				<div class="content timeline">
+					<div class="timeline-item">
+						<h4>Programmer <span>— DINKOMINFO Kota Pekalongan</span></h4>
+						<ul>
+							<li>Developing and maintaining internal web applications for municipal government digital services.</li>
+							<li>Implementing secure and scalable backend solutions using PHP and Node.js.</li>
+							<li>Collaborating with cross-functional teams to improve public digital platforms and data security.</li>
+						</ul>
+					</div>
+
+					<div class="timeline-item">
+						<h4>Front-End Developer</h4>
+						<ul>
+							<li>Leading front-end development of creative digital products and responsive web applications.</li>
+							<li>Implementing clean, high-performance user interfaces using modern JavaScript frameworks.</li>
+							<li>Working closely with backend engineers to integrate APIs and streamline UX delivery.</li>
+						</ul>
+					</div>
+
+					<div class="timeline-item">
+						<h4>IT Support</h4>
+						<ul>
+							<li>Maintained campus IT infrastructure, local area networks, and server systems.</li>
+							<li>Troubleshot hardware, software, and connectivity issues across institutional facilities.</li>
+						</ul>
+					</div>
+
+					<div class="timeline-item">
+						<h4>Lab Assistant</h4>
+						<ul>
+							<li>Guided students during hands-on laboratory sessions for programming and computer networking.</li>
+							<li>Maintained lab workstations and collaborated with faculty to refine practical exercises.</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h3 class="post-title">Education</h3>
+				<div class="content">
+					<div class="timeline-item">
+						<h4>Informatics Engineering</h4>
+						<p>Focused on Software Engineering, Web Development, and Cybersecurity. Active participant in local programming challenges and information security workshops.</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h3 class="post-title">Let's Build Something Great</h3>
 				<div class="content">
 					<p>
-						Outside of my daily development work, I like to dedicate time to open-source projects, explore emerging technologies, and experiment with frontend and backend frameworks. I am also an avid coffee enthusiast who enjoys exploring different coffee beans and brewing recipes.
+						Whether you have an engineering project in mind, a security assessment inquiry, or simply want to connect, my inbox is always open.
 					</p>
-					<p>I am always open to exciting collaborations, new ideas, and insightful tech discussions.</p>
 					<p style="margin-top:24px;">
 						<CallToAction
-						target="_self"
-						href="mailto:contact@febiadi.dev"
+							target="_self"
+							href="mailto:rheatkhs@gmail.com"
 						>
 							Get in Touch
 						</CallToAction>
 					</p>
 				</div>
 			</section>
-			<p></p>
-			<p></p>
 		</main>
 	</div>
 </BlogPostLayout>
@@ -62,20 +133,66 @@ import myPortrait from "../assets/portrait.jpg";
 		flex-direction: column;
 		margin:0 auto;
 	}
-	p{
-		margin:0.75rem 0;
+	p {
+		margin: 0.75rem 0;
+		line-height: 1.7;
 	}
-	figure{
-		margin:2rem 0;
-	}
-	img{max-width: 100%;}
-	.portrait{
+	.portrait {
 		border-radius: 100px;
-		margin:12px 0 12px;
+		margin: 12px 0 16px;
 		overflow: hidden;
 		text-align: left;
 	}
-	a, a:link{
-		color:var(--color-blue);
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 16px;
+		margin: 1rem 0;
+	}
+	.skill-card {
+		padding: 16px 20px;
+		border: 1px solid var(--color-700);
+		border-radius: 8px;
+		background: var(--color-900);
+		h4 {
+			margin: 0 0 8px;
+			font-size: 1rem;
+			color: var(--color-100);
+		}
+		p {
+			margin: 0;
+			font-size: 0.875rem;
+			color: var(--color-300);
+			line-height: 1.5;
+		}
+	}
+	.timeline {
+		margin-top: 1rem;
+	}
+	.timeline-item {
+		margin-bottom: 1.75rem;
+		h4 {
+			font-size: 1.1rem;
+			color: var(--color-100);
+			margin-bottom: 0.5rem;
+			span {
+				font-size: 0.95rem;
+				font-weight: 400;
+				color: var(--color-400);
+			}
+		}
+		ul {
+			list-style: disc;
+			padding-left: 1.25rem;
+			color: var(--color-300);
+			line-height: 1.6;
+		}
+		li {
+			margin-bottom: 0.35rem;
+			font-size: 0.95rem;
+		}
+	}
+	a, a:link {
+		color: var(--color-blue);
 	}
 </style>
