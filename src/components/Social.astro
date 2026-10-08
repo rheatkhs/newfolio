@@ -4,64 +4,66 @@ import { socialLinks } from  '../data/content.ts';
 <div class="author border-bottom">
     <div class="social">
       {socialLinks.map((link) => (
-        <a href={link.url} target="_blank" class="social-link">
+        <a href={link.url} target="_blank" class="social-link" aria-label={link.name}>
           <Fragment set:html={link.icon} />
         </a>
       ))}
     </div>
 </div>
 <style is:global>
-  .ic-social{
-    fill:var(--color-100);
-    width: auto;
-    height: 22px;
-  }
-
-  .social{
-    margin:0px auto;
+  .social {
+    margin: 0 auto;
     display: flex;
-    gap: 16px;
+    gap: 18px;
     align-items: center;
     justify-content: center;
-    padding-bottom:8px;
-    }
-    .social a{
-      opacity:0.75;
-    }
-    .social a:hover{
-      opacity:1;
-    }
+    padding-bottom: 10px;
+  }
 
-    .social-link svg{
-        fill: var(--color-400);
-        width: auto;
-        height: 20px;
-        color: var(--color-400);
-    }
-    .social .ic-behance:hover{
-        fill: #0056ff!important;
-    }
-    .social .ic-dribbble:hover{
-        fill: #d145bf!important;
-    }
-    .social .ic-bilibili:hover{
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-400);
+    opacity: 0.8;
+    transition: all 0.25s ease;
+  }
 
-        fill: #00aeec!important;
-    }
-    .social .ic-zcool:hover{
-        fill: #ffd100!important;
-    }
-    .social .ic-rss:hover{
-        fill: #ee802f!important;
-    }
-    .social .ic-github:hover{
-        fill: var(--color-200);
-    }
-    .social .ic-xiaohongshu{
-      width:40px;
-      height: auto;
-    }
-    .social .ic-xiaohongshu:hover{
-        fill: #ff2742!important;
-    }
+  .social-link:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
+  .social-link svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    color: var(--color-400);
+    transition: color 0.25s ease, fill 0.25s ease;
+  }
+
+  .social-link:hover svg {
+    color: var(--color-100);
+    fill: currentColor;
+  }
+
+  .social-link:hover .ic-github {
+    color: var(--color-100);
+  }
+
+  .social-link:hover .ic-linkedin {
+    color: #0a66c2;
+  }
+
+  .social-link:hover .ic-website {
+    color: var(--color-blue);
+  }
+
+  .social-link:hover .ic-email {
+    color: #ea4335;
+  }
+
+  .social-link:hover .ic-rss {
+    color: #ee802f;
+  }
 </style>
