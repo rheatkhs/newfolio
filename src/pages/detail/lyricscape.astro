@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import DetailHeader from "../../components/DetailHeader.astro";
+import DetailPostLayout from "../../layouts/DetailPostLayout.astro";
+import CallToAction from "../../components/CallToAction.astro";
+import coverImage from "../../assets/projects/cover/cover-lyricscape.png";
+---
+<DetailPostLayout
+	title="Project 39: Lyricscape - Hatsune Miku Kinetic Lyric Visualizer | Febiadi Wisnu Akbar"
+	description="A creative web audio application built for the Hatsune Miku Magical Mirai 2026 programming contest, combining the TextAlive API, HTML5 Canvas particle physics, and synchronized kinetic typography."
+	keywords="Project 39 Lyricscape, Hatsune Miku, Magical Mirai 2026, TextAlive API, Kinetic Typography, Web Audio API, Canvas Animation, Febiadi Wisnu Akbar"
+>
+	<div class="post">
+		<main class="post-wrapper">
+			<DetailHeader
+				tag="CREATIVE TECH & AUDIO VISUALIZATION"
+				description="Hatsune Miku Magical Mirai Kinetic Typography Experience">
+				<h1 class="font-type">
+					Project 39: Lyricscape
+				</h1>
+			</DetailHeader>
+
+			<section>
+				<div class="content">
+					<div class="row desc">
+						<div class="col-1a">
+							<h3 class="post-title">Project Overview</h3>
+							<p class="post-desc">
+								<strong>Project 39: Lyricscape</strong> is an interactive creative web application developed for the Hatsune Miku Magical Mirai 2026 programming contest. The project bridges musical composition and dynamic visual storytelling by transforming vocal waveforms and lyric data into an ethereal kinetic typography canvas that dances in real time with Hatsune Miku's vocals.
+							</p>
+
+							<h3 class="post-title" style="margin-top:2rem;">Core Architecture & Capabilities</h3>
+							<ul class="achievement-list">
+								<li><strong>TextAlive App API Integration:</strong> Millisecond-accurate musical synchronization with real-time lyric phrases, character phonetic timing, and beat tracking.</li>
+								<li><strong>High-Performance HTML5 Canvas Engine:</strong> Custom animation loops rendering floating particle fields, harmonic wave lines, and dynamic bokeh effects at 60 FPS.</li>
+								<li><strong>Kinetic Typography & Physics:</strong> Words and verses erupt with customized velocity, elasticity, and rotation synchronized to vocal onset intensity.</li>
+								<li><strong>Glassmorphic Audio HUD:</strong> Floating glassmorphism control panel featuring smooth timeline scrubber, volume control, track metadata, and status indicators.</li>
+								<li><strong>Responsive Spatial Staging:</strong> Thoughtful typographic hierarchy and character art staging that gracefully adapts across mobile displays and widescreen desktop setups.</li>
+							</ul>
+
+							<h3 class="post-title" style="margin-top:2rem;">Engineering Highlights</h3>
+							<ul class="achievement-list">
+								<li>Built using TypeScript and modern modular JavaScript for clean event-driven audio architecture.</li>
+								<li>Leveraged requestAnimationFrame scheduling and delta-time math to eliminate stutter during intense vocal sequences.</li>
+								<li>Styled with modern CSS backdrop-filter glassmorphism and ambient pastel color gradients reflecting the Magical Mirai theme.</li>
+							</ul>
+						</div>
+
+						<div class="col-1a" style="margin-top:2rem;">
+							<div class="btn">
+								<CallToAction href="https://project-39-lyricscape.vercel.app" target="_blank">
+									Experience Lyricscape
+								</CallToAction>
+								<CallToAction href="/project" target="_self">
+									Back to Projects
+								</CallToAction>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="preview">
+				<picture class="picture">
+					<Image src={coverImage} alt="Project 39: Lyricscape Preview" loading="lazy" decoding="async" />
+				</picture>
+			</section>
+		</main>
+	</div>
+</DetailPostLayout>
+
+<style>
+.achievement-list {
+	list-style: disc;
+	padding-left: 1.5rem;
+	margin: 1rem 0;
+	color: var(--color-200);
+	line-height: 1.8;
+}
+.achievement-list li {
+	margin-bottom: 0.5rem;
+}
+.picture img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	border: 1px solid var(--color-700);
+}
+</style>

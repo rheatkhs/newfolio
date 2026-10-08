@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import DetailHeader from "../../components/DetailHeader.astro";
+import DetailPostLayout from "../../layouts/DetailPostLayout.astro";
+import CallToAction from "../../components/CallToAction.astro";
+import coverImage from "../../assets/projects/cover/cover-2960-gt3.png";
+---
+<DetailPostLayout
+	title="Ferrari 296 GT3 - Interactive 3D WebGL Digital Showcase | Febiadi Wisnu Akbar"
+	description="An immersive real-time 3D web experience dedicated to the Ferrari 296 GT3 racing machine, featuring photorealistic PBR materials, custom GLSL shaders, camera choreography, and interactive aerodynamics breakdown."
+	keywords="Ferrari 296 GT3, Three.js, WebGL, 3D Showcase, GLTF, PBR Materials, Creative Development, Febiadi Wisnu Akbar"
+>
+	<div class="post">
+		<main class="post-wrapper">
+			<DetailHeader
+				tag="THREE.JS & WEBGL EXPERIENCE"
+				description="Interactive 3D Digital Showcase & Aerodynamics Explorer">
+				<h1 class="font-type">
+					Ferrari 296 GT3
+				</h1>
+			</DetailHeader>
+
+			<section>
+				<div class="content">
+					<div class="row desc">
+						<div class="col-1a">
+							<h3 class="post-title">Project Overview</h3>
+							<p class="post-desc">
+								<strong>The Ferrari 296 GT3 Digital Showcase</strong> is an interactive, high-performance WebGL application celebrating Ferrari's championship-winning endurance track weapon. Designed with an editorial aesthetic and precision engineering, the platform enables motorsport enthusiasts to inspect the vehicle in real-time 3D, explore aerodynamic airflow dynamics, and configure visual specifications seamlessly across modern browsers.
+							</p>
+
+							<h3 class="post-title" style="margin-top:2rem;">Technical Architecture & Key Features</h3>
+							<ul class="achievement-list">
+								<li><strong>Real-time 3D Model Rendering:</strong> Powered by Three.js and WebGL, utilizing physically based rendering (PBR) materials, clearcoat carbon fiber textures, and specular reflections.</li>
+								<li><strong>Optimized Asset Pipeline:</strong> High-poly vehicle geometries compressed via Draco mesh compression and WebP textures to ensure high fidelity with minimal load times.</li>
+								<li><strong>Interactive Exploration & Camera Choreography:</strong> Smooth orbital controls and preset camera angles providing focused views of the cockpit, rear diffuser, front splitter, and engine bay.</li>
+								<li><strong>Aerodynamics & Performance Breakdown:</strong> Dynamic callouts showcasing the 120° V6 turbo powertrain, downforce statistics, and track configuration telemetry.</li>
+								<li><strong>Adaptive Performance Scaling:</strong> Automatic device capability detection with resolution downsampling and pixel ratio throttling to maintain a stable 60 FPS across desktop and mobile devices.</li>
+							</ul>
+
+							<h3 class="post-title" style="margin-top:2rem;">Engineering Highlights</h3>
+							<ul class="achievement-list">
+								<li>Built with modern JavaScript/TypeScript tooling and optimized Vite bundling.</li>
+								<li>Implemented custom post-processing passes including realistic bloom, vignette, and ambient occlusion.</li>
+								<li>Created a sleek, dark-mode racing HUD with custom typography inspired by Ferrari Corse Clienti aesthetics.</li>
+							</ul>
+						</div>
+
+						<div class="col-1a" style="margin-top:2rem;">
+							<div class="btn">
+								<CallToAction href="https://2960-gt3.vercel.app" target="_blank">
+									Visit Live Showcase
+								</CallToAction>
+								<CallToAction href="/project" target="_self">
+									Back to Projects
+								</CallToAction>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="preview">
+				<picture class="picture">
+					<Image src={coverImage} alt="Ferrari 296 GT3 3D Showcase Preview" loading="lazy" decoding="async" />
+				</picture>
+			</section>
+		</main>
+	</div>
+</DetailPostLayout>
+
+<style>
+.achievement-list {
+	list-style: disc;
+	padding-left: 1.5rem;
+	margin: 1rem 0;
+	color: var(--color-200);
+	line-height: 1.8;
+}
+.achievement-list li {
+	margin-bottom: 0.5rem;
+}
+.picture img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	border: 1px solid var(--color-700);
+}
+</style>

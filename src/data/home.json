@@ -13,6 +13,30 @@
 	},
 	{
 		"id": "2",
+		"cover": "/assets/cover/cover-2960-gt3.png",
+		"title": "Ferrari 296 GT3",
+		"desc": "Interactive 3D WebGL showcase and digital configurator for the Ferrari 296 GT3 track weapon featuring real-time shader lighting and physics",
+		"url": "https://2960-gt3.vercel.app",
+		"detail": "/detail/2960-gt3",
+		"category": "web,recommend,3d,tools",
+		"tag": "3D / WebGL",
+		"date": "2026-03-26",
+		"mark": true
+	},
+	{
+		"id": "3",
+		"cover": "/assets/cover/cover-lyricscape.png",
+		"title": "Project 39: Lyricscape",
+		"desc": "Hatsune Miku kinetic lyric visualizer and real-time audio canvas powered by the TextAlive API with synchronized typography",
+		"url": "https://project-39-lyricscape.vercel.app",
+		"detail": "/detail/lyricscape",
+		"category": "web,recommend,3d,creative",
+		"tag": "Creative / Audio",
+		"date": "2026-03-24",
+		"mark": true
+	},
+	{
+		"id": "4",
 		"cover": "/assets/cover/cover-ppid.png",
 		"title": "PPID Kota Pekalongan",
 		"desc": "Official public information & governance transparency portal for Pekalongan City with online request tracking and public archives",
@@ -20,11 +44,11 @@
 		"detail": "/detail/ppid",
 		"category": "web,recommend,government",
 		"tag": "Government / Portal",
-		"date": "2026-03-25",
+		"date": "2026-03-22",
 		"mark": true
 	},
 	{
-		"id": "3",
+		"id": "5",
 		"cover": "/assets/cover/cover-pramuka.png",
 		"title": "Pramuka Kota Pekalongan",
 		"desc": "Official digital scout movement portal of Kwarcab Pekalongan featuring member registries, event agendas, and news broadcasts",
@@ -36,5 +60,3 @@
 		"mark": true
 	}
 ]
-
-
