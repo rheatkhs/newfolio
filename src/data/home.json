@@ -14,7 +14,7 @@
 	{
 		"id": "2",
 		"cover": "/assets/cover/cover-kmnf.png",
-		"title": "KMNF URL Shortener",
+		"title": "KMNF",
 		"desc": "High-performance URL shortener service with sub-15ms redirect resolution and click analytics",
 		"url": "https://kmnf.site",
 		"detail": "/detail/kmnf",

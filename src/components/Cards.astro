@@ -14,8 +14,8 @@ for (const [index,item] of cardData.entries()) {
     category: item.category || "other",
     tag: item.tag || "",
     date: item.date || "",
-    mark: item.mark|| "",
-    index: index + 1,
+    mark: item.mark || false,
+    index: String(index + 1).padStart(2, '0'),
   };
   cards.push(card);
 }
@@ -23,42 +23,41 @@ const count = cards.length;
 ---
 <Filter count={count} />
 <div class="section card">
-    <div class="js-shuffle-sizer" >
-        <div class="card-list my-shuffle-container" id="js-shuffle">
-            {cards.slice().reverse().map((card) => (
-              <div class="card-item col-xs-1a col-md-2a col-lg-3a col-xxl-4a" data-groups={JSON.stringify(card.category)} data-date-created={card.date} data-title={card.title}>
-                  <div class="card-header">
-                      <div class="card-type type">
-                          <span class="type-tag">- {card.tag} - </span>
-                      </div>
-                      <div class="card-type type">
-                          <span class="type-tag">(0{card.index})</span>
-                      </div>
+    <div class="card-list my-shuffle-container" id="js-shuffle">
+        <div class="col-xs-1a col-md-2a col-lg-3a col-xxl-3a js-shuffle-sizer" style="padding:0;margin:0;height:0;visibility:hidden;pointer-events:none;"></div>
+        {cards.map((card) => (
+          <div class="card-item col-xs-1a col-md-2a col-lg-3a col-xxl-3a" data-groups={JSON.stringify(card.category.split(','))} data-date-created={card.date} data-title={card.title}>
+              <div class="card-header">
+                  <div class="card-type type">
+                      <span class="type-tag">- {card.tag} - </span>
                   </div>
-                  <div class="card-body">
-                      <a href={card.detail ? card.detail:"javascript:void(0)"} class="card-figure" target={card.detail ? "_blank":"_self"}>
-                        <img class="card-figure__img lazy"
-                              src={card.cover} loading="lazy"
-                              alt={card.title}
-                        />
-                      </a>
-                  </div>
-                  <div class="card-footer">
-                      <div class="card-detail">
-                          <a href={card.detail ? card.detail :"javascript:void(0)"} target={card.detail ? "_blank":"_self"} class="card-name card-item__title">
-                            {card.mark && <span class="tag-original">Featured</span>}   {card.title}
-                          </a>
-                          <div class="card-info">
-                            {card.description}
-                          </div>
-                      </div>
-                     {card.url && <a href={card.url ? card.url : "javascript:void(0)" } class="card-link card-link__go js-gotip" target={card.url ? "_blank" : "_self"}>
-                      </a> }
+                  <div class="card-type type">
+                      <span class="type-tag">({card.index})</span>
                   </div>
               </div>
-              ))}
-        </div>
-        <div class="col-sm-1 col-xs-1 my-sizer-element" id="my-sizer-element"></div>
+              <div class="card-body">
+                  <a href={card.detail ? card.detail : "javascript:void(0)"} class="card-figure" target={card.detail?.startsWith('http') ? "_blank" : "_self"}>
+                    <img class="card-figure__img lazy"
+                          src={card.cover} loading="lazy"
+                          alt={card.title}
+                    />
+                  </a>
+              </div>
+              <div class="card-footer">
+                  <div class="card-detail">
+                      <a href={card.detail ? card.detail : "javascript:void(0)"} target={card.detail?.startsWith('http') ? "_blank" : "_self"} class="card-name card-item__title">
+                        {card.mark && <span class="tag-original">Featured</span>}
+                        <span class="card-title-text">{card.title}</span>
+                      </a>
+                      <div class="card-info" title={card.description}>
+                        {card.description}
+                      </div>
+                  </div>
+                 {card.url && <a href={card.url ? card.url : "javascript:void(0)" } class="card-link card-link__go js-gotip" target="_blank" aria-label={`Visit ${card.title}`}>
+                  </a> }
+              </div>
+          </div>
+          ))}
     </div>
 </div>
 <script>
@@ -89,7 +88,8 @@ class Demo {
     this.element = element;
     this.shuffle = new Shuffle(element, {
       itemSelector: '.card-item',
-      sizer: element.querySelector('.js-shuffle-sizer') });
+      sizer: element.querySelector('.js-shuffle-sizer')
+    });
     // Log events.
     this.addShuffleEventListeners();
     this._activeFilters = [];
@@ -241,48 +241,46 @@ document.addEventListener('DOMContentLoaded', () => {
 .type-tag{
     display: inline-block;
     height: 20px;
-    padding: 0 10px;
+    padding: 0 4px;
     line-height: 20px;
     font-size: 12px;
     font-weight: 400;
     border-radius: 4px;
-    /* border: 1px solid var(--color-200); */
     vertical-align: middle;
     color: var(--color-100);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     white-space: nowrap;
 }
 .tag-original{
-  display: block;
-  height: 22px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 12px;
-  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 7px;
+  line-height: 20px;
+  font-size: 11px;
+  font-weight: 600;
   border-radius: 4px;
-  vertical-align: middle;
   color: var(--color-900);
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   white-space: nowrap;
   background-color: var(--color-blue);
-  margin-right:6px;
+  flex-shrink: 0;
+  margin-right: 6px;
 }
 .card{
     &-list{
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        margin:48px auto 48px;
-
+        margin: 40px auto 48px;
     }
     &-item{
-        /* width: calc( 33.33% - 12px );
-        margin: 0 12px 36px 12px; */
         float: left;
-        margin-bottom:1.5rem;
+        margin-bottom: 2rem;
+        box-sizing: border-box;
     }
     &-header{
-        margin-bottom:6px;
+        margin-bottom: 8px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -294,86 +292,104 @@ document.addEventListener('DOMContentLoaded', () => {
         width: 100%;
         height: auto;
         max-width: 100%;
-        background-color: rgba(0,0,0,.02);
+        background-color: rgba(255, 255, 255, .02);
         border-radius: var(--radius);
-        /* padding-bottom: 56%; */
-        padding-bottom: calc(2 * 100% / 3);
-        display: inline-block;
+        padding-bottom: 60%;
+        display: block;
         position: relative;
         overflow: hidden;
         border: 1px solid var(--border);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+
+        &:hover {
+            border-color: var(--color-400);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+
         &__img{
             position: absolute;
             width: 100%;
             height: 100%;
             left: 0;
             top: 0;
-            -o-object-fit: cover;
             object-fit: cover;
-            transition: all 0.5s;
+            object-position: top center;
+            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-        &:hover  .card-figure__img{
-            transform:scale(1.05);
+        &:hover .card-figure__img{
+            transform: scale(1.04);
         }
-        &__video{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            -o-object-fit: cover;
-            object-fit: cover;
-            transition: all 0.5s;
-        }
-        &:hover  .card-figure__video{
-            transform:scale(1.05);
-        }
-
     }
     &-footer{
         width: 100%;
-        margin-top:12px;
-        margin-bottom:12px;
+        margin-top: 12px;
+        margin-bottom: 8px;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        gap: 8px;
+    }
+    &-detail{
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
     }
     &-name{
-        font-size: 18px;
+        font-size: 17px;
         font-weight: 600;
         color: var(--color-200);
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
         display: flex;
         align-items: center;
+        text-decoration: none;
+        width: 100%;
+        min-width: 0;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: var(--color-100);
+        }
+    }
+    &-title-text{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        min-width: 0;
+        flex: 1;
     }
     &-info{
-        display: block;
-        font-size: 14px;
-        font-size: 0.875rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        font-size: 13px;
+        line-height: 1.5;
         color: var(--color-300);
         font-weight: 400;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        margin-top: 4px;
+        margin-top: 5px;
+        min-height: 2.5rem;
+        word-break: break-word;
     }
     &-link__go {
-            background-repeat: no-repeat;
-            background-position: 6px center;
-            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>%3Cpath d='M5 15L15 5M15 5H7.5M15 5V12.5' stroke='%23737373' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>%3C/svg>");
-            width: 32px;
-            height: 32px;
-            text-decoration: none;
-            display: block;
-            position: relative;
-            transition: all 0.35s ease-in-out;
-            &:hover {
+        flex-shrink: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>%3Cpath d='M5 15L15 5M15 5H7.5M15 5V12.5' stroke='%23737373' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>%3C/svg>");
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        text-decoration: none;
+        display: block;
+        margin-top: 2px;
+        transition: all 0.25s ease-in-out;
+        &:hover {
             transform: rotate(45deg);
-           }
+            border-color: var(--color-200);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
     }
 }
 </style>
-
-

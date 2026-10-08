@@ -1,14 +1,13 @@
 ---
 import { projectItems } from "../data/project";
 import ProjectImage from "../components/ProjectImage.astro";
-const reversedItems = projectItems.slice().reverse();
 const images = import.meta.glob<{ default: ImageMetadata }>(
 	"/src/assets/projects/**/*.{jpeg,jpg,png,gif}",
 );
 ---
 {
-	reversedItems.map((item) => (
-		<a href={item.detail} class="project-item border-bottom">
+	projectItems.map((item) => (
+		<a href={item.detail} class="project-item border-bottom" target={item.detail?.startsWith('http') ? "_blank" : "_self"}>
 			<div class="project-header">
 				<div class="project-title">
 					<h3>
