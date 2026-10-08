@@ -12,6 +12,16 @@ export interface ProjectItem {
 
 export const projectItems: ProjectItem[] = [
 	{
+		title: "Noir",
+		title_en: "Autonomous Multi-Agent Penetration Testing Framework",
+		description: "An autonomous multi-agent security testing framework designed for OpenCode, coordinating specialized AI agents to perform reconnaissance, vulnerability scanning, and ethical exploit verification in isolated sandboxes.",
+		date: "2026-04-07",
+		detail: "/d/4b8e2f1a",
+		url: "https://github.com/rheatkhs/noir",
+		cover: ['cover/cover-noir.png'],
+		tags: ['PYTHON', 'CYBERSECURITY', 'MULTI-AGENT AI', 'PENTESTING', 'DOCKER']
+	},
+	{
 		title: "Ferrari 296 GT3",
 		title_en: "Interactive 3D WebGL Digital Showcase & Configurator",
 		description: "An immersive real-time 3D web experience dedicated to the Ferrari 296 GT3 racing machine, featuring photorealistic PBR materials, custom GLSL shaders, camera choreography, and interactive aerodynamics breakdown.",
@@ -50,6 +60,16 @@ export const projectItems: ProjectItem[] = [
 		url: "https://kopken.mevia.web.id",
 		cover: ['cover/cover-kopken.png'],
 		tags: ['REACT', 'BRAND EXPERIENCE', 'UI/UX', 'TAILWIND', 'F&B']
+	},
+	{
+		title: "censorship-id",
+		title_en: "Robust Indonesian Profanity & Evasion Filter Library",
+		description: "A high-performance, zero-dependency npm package for detecting and sanitizing Indonesian profanity with smart leetspeak evasion handling, severity classification, and full TypeScript support.",
+		date: "2026-04-02",
+		detail: "/d/1f8a9e2c",
+		url: "https://www.npmjs.com/package/censorship-id",
+		cover: ['cover/cover-censorship.png'],
+		tags: ['NPM PACKAGE', 'TYPESCRIPT', 'OPEN SOURCE', 'NLP / TEXT', 'SECURITY']
 	},
 	{
 		title: "Project 39: Lyricscape",

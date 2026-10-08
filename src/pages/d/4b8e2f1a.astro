@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import DetailHeader from "../../components/DetailHeader.astro";
+import DetailPostLayout from "../../layouts/DetailPostLayout.astro";
+import CallToAction from "../../components/CallToAction.astro";
+import coverImage from "../../assets/projects/cover/cover-noir.png";
+---
+<DetailPostLayout
+	title="Noir - Autonomous Multi-Agent Security Penetration Testing Framework | Febiadi Wisnu Akbar"
+	description="Autonomous multi-agent security penetration testing framework for OpenCode, coordinating specialized AI agents to perform reconnaissance, vulnerability analysis, and ethical exploit verification."
+	keywords="Noir, Cybersecurity, Multi-Agent AI, Penetration Testing, Autonomous Agents, Python, Docker, OpenCode, Ethical Hacking, Febiadi Wisnu Akbar"
+>
+	<div class="post">
+		<main class="post-wrapper">
+			<DetailHeader
+				tag="AUTONOMOUS AI & CYBERSECURITY"
+				description="Autonomous Multi-Agent Penetration Testing Framework for OpenCode">
+				<h1 class="font-type">
+					Noir <span style="font-size: 0.6em; opacity: 0.75; font-weight: 400; vertical-align: middle;">Grace Field House Edition</span>
+				</h1>
+			</DetailHeader>
+
+			<section>
+				<div class="content">
+					<div class="row desc">
+						<div class="col-1a">
+							<h3 class="post-title">Project Overview</h3>
+							<p class="post-desc">
+								<strong>Noir (Grace Field House Edition)</strong> is a fully-autonomous security penetration testing framework engineered for <strong>opencode.ai</strong>. By coordinating specialized, purpose-built AI agents—including Reconnaissance, Threat Modeler, Exploit Verifier, and Compliance Auditor—Noir systematically maps network attack surfaces, identifies security regressions, and validates vulnerabilities within strictly authorized scope boundaries.
+							</p>
+
+							<h3 class="post-title" style="margin-top:2rem;">Technical Architecture & Key Capabilities</h3>
+							<ul class="achievement-list">
+								<li><strong>Multi-Agent Swarm Orchestration:</strong> Employs modular AI agents collaborating synchronously to perform reconnaissance, deep port auditing, service fingerprinting, and security telemetry analysis.</li>
+								<li><strong>Strict Ethical Boundaries & Scope Guardrails:</strong> Built-in boundary validation enforces target ownership verification and prevents out-of-scope lateral movement or unauthorized network probing.</li>
+								<li><strong>Containerized Sandbox Execution:</strong> Integrates Docker environments to safely isolate exploit verifications and runtime evaluations from host systems.</li>
+								<li><strong>Vulnerability Correlation Engine:</strong> Evaluates discovered flaws against standard CVE taxonomies, reducing false positives through cross-agent validation.</li>
+								<li><strong>Comprehensive Audit Reporting:</strong> Automatically compiles machine-readable logs and human-friendly executive remediation roadmaps.</li>
+							</ul>
+
+							<h3 class="post-title" style="margin-top:2rem;">Engineering Highlights</h3>
+							<ul class="achievement-list">
+								<li>Engineered in Python with robust asynchronous CLI execution, PowerShell utilities, and Docker support.</li>
+								<li>Dual-licensed under Apache-2.0 and MIT for broad open-source developer accessibility.</li>
+								<li>Designed for security researchers, DevSecOps teams, and autonomous AI infrastructure benchmarking.</li>
+							</ul>
+						</div>
+
+						<div class="col-1a" style="margin-top:2rem;">
+							<div class="btn">
+								<CallToAction href="https://github.com/rheatkhs/noir" target="_blank">
+									View on GitHub
+								</CallToAction>
+								<CallToAction href="/project" target="_self">
+									Back to Projects
+								</CallToAction>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="preview">
+				<picture class="picture">
+					<Image src={coverImage} alt="Noir Autonomous Pentesting Framework Preview" loading="lazy" decoding="async" />
+				</picture>
+			</section>
+		</main>
+	</div>
+</DetailPostLayout>
+
+<style>
+.achievement-list {
+	list-style: disc;
+	padding-left: 1.5rem;
+	margin: 1rem 0;
+	color: var(--color-200);
+	line-height: 1.8;
+}
+.achievement-list li {
+	margin-bottom: 0.5rem;
+}
+.picture img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	border: 1px solid var(--color-700);
+}
+</style>

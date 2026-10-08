@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+import DetailHeader from "../../components/DetailHeader.astro";
+import DetailPostLayout from "../../layouts/DetailPostLayout.astro";
+import CallToAction from "../../components/CallToAction.astro";
+import coverImage from "../../assets/projects/cover/cover-censorship.png";
+---
+<DetailPostLayout
+	title="censorship-id - Robust Indonesian Profanity & Evasion Filter Library | Febiadi Wisnu Akbar"
+	description="A high-performance, zero-dependency npm package for detecting and sanitizing Indonesian profanity with leetspeak evasion handling, severity grading, and full TypeScript support."
+	keywords="censorship-id, npm package, Indonesian Profanity Filter, TypeScript, Node.js, NLP, Leetspeak Evasion, Open Source, Febiadi Wisnu Akbar"
+>
+	<div class="post">
+		<main class="post-wrapper">
+			<DetailHeader
+				tag="NPM PACKAGE & OPEN SOURCE DEVTOOLS"
+				description="Fast, Zero-Dependency Indonesian Profanity & Evasion Filter for Node.js & TypeScript">
+				<h1 class="font-type">
+					censorship-id <span style="font-size: 0.6em; opacity: 0.75; font-weight: 400; vertical-align: middle;">v2.0.3</span>
+				</h1>
+			</DetailHeader>
+
+			<section>
+				<div class="content">
+					<div class="row desc">
+						<div class="col-1a">
+							<h3 class="post-title">Project Overview</h3>
+							<p class="post-desc">
+								<strong>censorship-id</strong> is an open-source developer library published on the <strong>npm registry</strong>, providing robust, high-throughput text moderation for Indonesian language applications. Built specifically to tackle modern evasion techniques like leetspeak, punctuation insertion, and character elongation, the package equips backend APIs, chat platforms, and community forums with structured content moderation and zero runtime overhead.
+							</p>
+
+							<h3 class="post-title" style="margin-top:2rem;">Technical Architecture & Key Capabilities</h3>
+							<ul class="achievement-list">
+								<li><strong>Multi-Purpose Moderation API:</strong> Provides modular utilities including <code>detect()</code> (structured telemetry), <code>censorId()</code> (string sanitization with custom masks), and <code>isProfane()</code> (ultra-fast boolean lookups).</li>
+								<li><strong>Smart Mode Evasion Handling:</strong> Normalizes aggressive obfuscation techniques including number-to-letter substitution (e.g. <code>@nj1ng</code>, <code>b4ngs4t</code>), arbitrary punctuation separators, and repeated letters.</li>
+								<li><strong>Severity & Category Classification:</strong> Words are classified into granular categories (<code>vulgar</code>, <code>slur</code>, <code>sexual</code>, <code>offensive</code>, <code>slang</code>) and severity tiers (<code>low</code>, <code>medium</code>, <code>high</code>) for nuanced filtering policies.</li>
+								<li><strong>Dynamic Dictionary & Whitelist Engine:</strong> Allows developers to register custom exceptions, domain-specific slang, or bypass rules at runtime without modifying source packages.</li>
+								<li><strong>Zero Production Dependencies:</strong> Implemented in pure, optimized JavaScript with native regular expressions, keeping production bundles featherlight and dependency-vulnerability free.</li>
+							</ul>
+
+							<h3 class="post-title" style="margin-top:2rem;">Engineering Highlights</h3>
+							<ul class="achievement-list">
+								<li>Universal compatibility supporting both CommonJS (CJS) and ECMAScript Modules (ESM).</li>
+								<li>First-class TypeScript declaration files (<code>index.d.ts</code>) delivering complete type safety and IDE autocomplete.</li>
+								<li>Active open-source distribution under the MIT license on npm registry and GitHub.</li>
+							</ul>
+						</div>
+
+						<div class="col-1a" style="margin-top:2rem;">
+							<div class="btn">
+								<CallToAction href="https://www.npmjs.com/package/censorship-id" target="_blank">
+									View on NPM
+								</CallToAction>
+								<CallToAction href="https://github.com/rheatkhs/censorship-id" target="_blank">
+									View on GitHub
+								</CallToAction>
+								<CallToAction href="/project" target="_self">
+									Back to Projects
+								</CallToAction>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="preview">
+				<picture class="picture">
+					<Image src={coverImage} alt="censorship-id NPM Package Preview" loading="lazy" decoding="async" />
+				</picture>
+			</section>
+		</main>
+	</div>
+</DetailPostLayout>
+
+<style>
+.achievement-list {
+	list-style: disc;
+	padding-left: 1.5rem;
+	margin: 1rem 0;
+	color: var(--color-200);
+	line-height: 1.8;
+}
+.achievement-list li {
+	margin-bottom: 0.5rem;
+}
+.picture img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	border: 1px solid var(--color-700);
+}
+</style>
