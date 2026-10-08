@@ -1,6 +1,18 @@
 [
 	{
 		"id": "1",
+		"cover": "/assets/cover/cover-mevia.png",
+		"title": "MEVIA 3D",
+		"desc": "Modern Eco Virtual Interactive Adventure — official 3D interactive environmental education platform for SMA Don Bosco 2 Jakarta featuring Bank Sampah 3D & Eco Challenge",
+		"url": "https://www.mevia.web.id",
+		"detail": "/detail/mevia",
+		"category": "web,recommend,3d,community",
+		"tag": "3D / EdTech",
+		"date": "2026-04-05",
+		"mark": true
+	},
+	{
+		"id": "2",
 		"cover": "/assets/cover/cover-kadia.png",
 		"title": "KADIA",
 		"desc": "AI-powered legal drafting platform for municipal institutions with Multi-Agent collaboration and strict Qdrant RAG",
@@ -12,7 +24,7 @@
 		"mark": true
 	},
 	{
-		"id": "2",
+		"id": "3",
 		"cover": "/assets/cover/cover-neostream.png",
 		"title": "NeoStream",
 		"desc": "High-performance browser-native IPTV player supporting remote & local M3U playlists, low-latency HLS/m3u8 streaming, and CORS proxy bypass",
@@ -24,7 +36,7 @@
 		"mark": true
 	},
 	{
-		"id": "3",
+		"id": "4",
 		"cover": "/assets/cover/cover-2960-gt3.png",
 		"title": "Ferrari 296 GT3",
 		"desc": "Interactive 3D WebGL showcase and digital configurator for the Ferrari 296 GT3 track weapon featuring real-time shader lighting and physics",
@@ -36,7 +48,7 @@
 		"mark": true
 	},
 	{
-		"id": "4",
+		"id": "5",
 		"cover": "/assets/cover/cover-lyricscape.png",
 		"title": "Project 39: Lyricscape",
 		"desc": "Hatsune Miku kinetic lyric visualizer and real-time audio canvas powered by the TextAlive API with synchronized typography",
@@ -48,7 +60,7 @@
 		"mark": true
 	},
 	{
-		"id": "5",
+		"id": "6",
 		"cover": "/assets/cover/cover-ppid.png",
 		"title": "PPID Kota Pekalongan",
 		"desc": "Official public information & governance transparency portal for Pekalongan City with online request tracking and public archives",
@@ -60,7 +72,7 @@
 		"mark": true
 	},
 	{
-		"id": "6",
+		"id": "7",
 		"cover": "/assets/cover/cover-pramuka.png",
 		"title": "Pramuka Kota Pekalongan",
 		"desc": "Official digital scout movement portal of Kwarcab Pekalongan featuring member registries, event agendas, and news broadcasts",

@@ -12,6 +12,16 @@ export interface ProjectItem {
 
 export const projectItems: ProjectItem[] = [
 	{
+		title: "MEVIA 3D",
+		title_en: "Modern Eco Virtual Interactive Adventure",
+		description: "The official 3D interactive environmental education platform for SMA Don Bosco 2 Jakarta, combining real-time 3D waste sorting simulation (Bank Sampah 3D), board-game gamification (Eco Challenge), and school leaderboards.",
+		date: "2026-04-05",
+		detail: "/detail/mevia",
+		url: "https://www.mevia.web.id",
+		cover: ['cover/cover-mevia.png'],
+		tags: ['THREE.JS', '3D SIMULATION', 'EDTECH', 'GAMIFICATION', 'TAILWIND']
+	},
+	{
 		title: "KADIA",
 		title_en: "Knowledge-Based Assistant for Drafting Institutional Acts",
 		description: "An AI-powered legal technology platform designed for municipal government institutions to draft, harmonize, and validate legal products using Multi-Agent AI and strict Qdrant vector RAG.",
