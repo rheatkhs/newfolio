@@ -121,12 +121,8 @@ export interface FilterItem {
 	dataGroup: string
 }
 export const filterItems: FilterItem[] = [
-	{ content: "💎 Featured", dataGroup: "recommend" },
-	{ content: "Brand & Commerce", dataGroup: "brand" },
-	{ content: "AI & Tools", dataGroup: "ai" },
-	{ content: "Streaming & Media", dataGroup: "media" },
-	{ content: "3D & Creative", dataGroup: "3d" },
+	{ content: "3D & Interactive", dataGroup: "3d" },
+	{ content: "AI & Tools", dataGroup: "tools" },
 	{ content: "Government", dataGroup: "government" },
-	{ content: "Education & Community", dataGroup: "community" },
-	{ content: "All Web", dataGroup: "web" },
+	{ content: "Brand & Commerce", dataGroup: "brand" },
 ];

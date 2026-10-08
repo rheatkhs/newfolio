@@ -46,7 +46,6 @@ const count = cards.length;
               <div class="card-footer">
                   <div class="card-detail">
                       <a href={card.detail ? card.detail : "javascript:void(0)"} target={card.detail?.startsWith('http') ? "_blank" : "_self"} class="card-name card-item__title">
-                        {card.mark && <span class="tag-original">Featured</span>}
                         <span class="card-title-text">{card.title}</span>
                       </a>
                       <div class="card-info" title={card.description}>

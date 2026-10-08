@@ -1,87 +1,87 @@
 [
 	{
 		"id": "1",
-		"cover": "/assets/cover/cover-kopken.png",
-		"title": "Kopi Kenangan",
-		"desc": "Interactive brand experience and digital product catalog for Kopi Kenangan, showcasing coffee heritage, story timeline, and grab-and-go order ecosystem",
-		"url": "https://kopken.mevia.web.id",
-		"detail": "/detail/kopken",
-		"category": "web,recommend,brand",
-		"tag": "Brand / F&B",
-		"date": "2026-04-06",
-		"mark": true
-	},
-	{
-		"id": "2",
 		"cover": "/assets/cover/cover-mevia.png",
 		"title": "MEVIA 3D",
 		"desc": "Modern Eco Virtual Interactive Adventure — official 3D interactive environmental education platform for SMA Don Bosco 2 Jakarta featuring Bank Sampah 3D & Eco Challenge",
 		"url": "https://www.mevia.web.id",
 		"detail": "/detail/mevia",
-		"category": "web,recommend,3d,community",
+		"category": "web,3d",
 		"tag": "3D / EdTech",
-		"date": "2026-04-05",
-		"mark": true
+		"date": "2026-04-06",
+		"mark": false
 	},
 	{
-		"id": "3",
-		"cover": "/assets/cover/cover-sigap.png",
-		"title": "SIGAP Kota Pekalongan",
-		"desc": "Official government internship management portal for Pekalongan City digitizing inter-OPD placement distribution, performance appraisals, and e-certificate issuance",
-		"url": "https://sigap.pekalongankota.go.id",
-		"detail": "/detail/sigap",
-		"category": "web,recommend,government",
-		"tag": "Government / Portal",
-		"date": "2026-04-02",
-		"mark": true
-	},
-	{
-		"id": "4",
-		"cover": "/assets/cover/cover-kadia.png",
-		"title": "KADIA",
-		"desc": "AI-powered legal drafting platform for municipal institutions with Multi-Agent collaboration and strict Qdrant RAG",
-		"url": "https://dev-kadia.pekalongankota.go.id",
-		"detail": "/detail/kadia",
-		"category": "web,recommend,ai,tools",
-		"tag": "AI / Legal Tech",
-		"date": "2026-03-28",
-		"mark": true
-	},
-	{
-		"id": "5",
-		"cover": "/assets/cover/cover-neostream.png",
-		"title": "NeoStream",
-		"desc": "High-performance browser-native IPTV player supporting remote & local M3U playlists, low-latency HLS/m3u8 streaming, and CORS proxy bypass",
-		"url": "https://neostream-inky.vercel.app",
-		"detail": "/detail/neostream",
-		"category": "web,recommend,media,tools",
-		"tag": "Streaming / IPTV",
-		"date": "2026-03-27",
-		"mark": true
-	},
-	{
-		"id": "6",
+		"id": "2",
 		"cover": "/assets/cover/cover-2960-gt3.png",
 		"title": "Ferrari 296 GT3",
 		"desc": "Interactive 3D WebGL showcase and digital configurator for the Ferrari 296 GT3 track weapon featuring real-time shader lighting and physics",
 		"url": "https://2960-gt3.vercel.app",
 		"detail": "/detail/2960-gt3",
-		"category": "web,recommend,3d,tools",
+		"category": "web,3d",
 		"tag": "3D / WebGL",
-		"date": "2026-03-26",
-		"mark": true
+		"date": "2026-04-05",
+		"mark": false
 	},
 	{
-		"id": "7",
+		"id": "3",
+		"cover": "/assets/cover/cover-kadia.png",
+		"title": "KADIA",
+		"desc": "AI-powered legal drafting platform for municipal institutions with Multi-Agent collaboration and strict Qdrant RAG",
+		"url": "https://dev-kadia.pekalongankota.go.id",
+		"detail": "/detail/kadia",
+		"category": "web,tools",
+		"tag": "AI / Legal Tech",
+		"date": "2026-04-04",
+		"mark": false
+	},
+	{
+		"id": "4",
+		"cover": "/assets/cover/cover-neostream.png",
+		"title": "NeoStream",
+		"desc": "High-performance browser-native IPTV player supporting remote & local M3U playlists, low-latency HLS/m3u8 streaming, and CORS proxy bypass",
+		"url": "https://neostream-inky.vercel.app",
+		"detail": "/detail/neostream",
+		"category": "web,tools",
+		"tag": "Streaming / IPTV",
+		"date": "2026-04-03",
+		"mark": false
+	},
+	{
+		"id": "5",
+		"cover": "/assets/cover/cover-kopken.png",
+		"title": "Kopi Kenangan",
+		"desc": "Interactive brand experience and digital product catalog for Kopi Kenangan, showcasing coffee heritage, story timeline, and grab-and-go order ecosystem",
+		"url": "https://kopken.mevia.web.id",
+		"detail": "/detail/kopken",
+		"category": "web,brand",
+		"tag": "Brand / F&B",
+		"date": "2026-04-02",
+		"mark": false
+	},
+	{
+		"id": "6",
 		"cover": "/assets/cover/cover-lyricscape.png",
 		"title": "Project 39: Lyricscape",
 		"desc": "Hatsune Miku kinetic lyric visualizer and real-time audio canvas powered by the TextAlive API with synchronized typography",
 		"url": "https://project-39-lyricscape.vercel.app",
 		"detail": "/detail/lyricscape",
-		"category": "web,recommend,3d,creative",
+		"category": "web,3d",
 		"tag": "Creative / Audio",
-		"date": "2026-03-24",
-		"mark": true
+		"date": "2026-03-28",
+		"mark": false
+	},
+	{
+		"id": "7",
+		"cover": "/assets/cover/cover-sigap.png",
+		"title": "SIGAP Kota Pekalongan",
+		"desc": "Official government internship management portal for Pekalongan City digitizing inter-OPD placement distribution, performance appraisals, and e-certificate issuance",
+		"url": "https://sigap.pekalongankota.go.id",
+		"detail": "/detail/sigap",
+		"category": "web,government",
+		"tag": "Government / Portal",
+		"date": "2026-03-25",
+		"mark": false
 	},
 	{
 		"id": "8",
@@ -90,10 +90,10 @@
 		"desc": "Official public information & governance transparency portal for Pekalongan City with online request tracking and public archives",
 		"url": "https://ppid.pekalongankota.go.id",
 		"detail": "/detail/ppid",
-		"category": "web,recommend,government",
+		"category": "web,government",
 		"tag": "Government / Portal",
 		"date": "2026-03-22",
-		"mark": true
+		"mark": false
 	},
 	{
 		"id": "9",
@@ -102,9 +102,9 @@
 		"desc": "Official digital scout movement portal of Kwarcab Pekalongan featuring member registries, event agendas, and news broadcasts",
 		"url": "https://pramukakotapekalongan.or.id",
 		"detail": "/detail/pramuka",
-		"category": "web,recommend,community",
+		"category": "web,government",
 		"tag": "Community / Portal",
 		"date": "2026-03-20",
-		"mark": true
+		"mark": false
 	}
 ]
