@@ -12,6 +12,16 @@ export interface ProjectItem {
 
 export const projectItems: ProjectItem[] = [
 	{
+		title: "KADIA",
+		title_en: "Knowledge-Based Assistant for Drafting Institutional Acts",
+		description: "An AI-powered legal technology platform designed for municipal government institutions to draft, harmonize, and validate legal products using Multi-Agent AI and strict Qdrant vector RAG.",
+		date: "2026-03-28",
+		detail: "/detail/kadia",
+		url: "https://dev-kadia.pekalongankota.go.id",
+		cover: ['cover/cover-kadia.png'],
+		tags: ['AI', 'MULTI-AGENT', 'QDRANT RAG', 'LEGAL TECH', 'LARAVEL']
+	},
+	{
 		title: "PPID Kota Pekalongan",
 		title_en: "Public Information & Governance Transparency Portal",
 		description: "The official public information service portal for the Government of Pekalongan City, providing online information requests, regulatory document archives, and real-time request tracking.",

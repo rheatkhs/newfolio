@@ -53,7 +53,7 @@ export const aboutTdk: SeoTdk = {
 export const projectTdk: SeoTdk = {
 	title: 'Projects | Febiadi Wisnu Akbar',
 	description: 'A complete inventory of tools, applications, and source repositories engineered by Febiadi Wisnu Akbar.',
-	keywords: 'PPID Kota Pekalongan, Pramuka Kota Pekalongan, Kwarcab Pekalongan, Government Portal, Febiadi Wisnu Akbar Projects'
+	keywords: 'KADIA, PPID Kota Pekalongan, Pramuka Kota Pekalongan, Legal AI, Qdrant RAG, Government Portal, Febiadi Wisnu Akbar Projects'
 }
 
 export const notFoundTdk: SeoTdk = {
@@ -122,6 +122,7 @@ export interface FilterItem {
 }
 export const filterItems: FilterItem[] = [
 	{ content: "💎 Featured", dataGroup: "recommend" },
+	{ content: "AI & Tools", dataGroup: "ai" },
 	{ content: "Government", dataGroup: "government" },
 	{ content: "Community", dataGroup: "community" },
 	{ content: "Web Apps", dataGroup: "web" },

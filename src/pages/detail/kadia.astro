@@ -1,0 +1,90 @@
+---
+import { Image } from "astro:assets";
+import DetailHeader from "../../components/DetailHeader.astro";
+import DetailPostLayout from "../../layouts/DetailPostLayout.astro";
+import CallToAction from "../../components/CallToAction.astro";
+import coverImage from "../../assets/projects/cover/cover-kadia.png";
+---
+<DetailPostLayout
+	title="KADIA - AI-Powered Legal Drafting & Regulatory Intelligence | Febiadi Wisnu Akbar"
+	description="Knowledge-Based Assistant for Drafting Institutional Acts (KADIA), an enterprise legal-tech platform combining Multi-Agent AI and strict Qdrant RAG to modernize municipal legal drafting."
+	keywords="KADIA, Legal Tech, Multi-Agent AI, Qdrant RAG, Regulatory Compliance, UU 12/2011, Pekalongan, Febiadi Wisnu Akbar"
+>
+	<div class="post">
+		<main class="post-wrapper">
+			<DetailHeader
+				tag="ARTIFICIAL INTELLIGENCE & LEGAL TECH"
+				description="Knowledge-Based Assistant for Drafting Institutional Acts">
+				<h1 class="font-type">
+					KADIA
+				</h1>
+			</DetailHeader>
+
+			<section>
+				<div class="content">
+					<div class="row desc">
+						<div class="col-1a">
+							<h3 class="post-title">Project Overview</h3>
+							<p class="post-desc">
+								<strong>KADIA (Knowledge-Based Assistant for Drafting Institutional Acts)</strong> is a state-of-the-art legal technology platform engineered for municipal government bodies to accelerate, review, and harmonize drafts of official legal products (Peraturan Daerah, Peraturan Walikota, Keputusan Walikota). By leveraging Multi-Agent AI systems and high-precision Retrieval-Augmented Generation (RAG), KADIA eliminates regulatory contradictions and drastically reduces the time required for institutional legal formulation.
+							</p>
+
+							<h3 class="post-title" style="margin-top:2rem;">Core Architecture & Capabilities</h3>
+							<ul class="achievement-list">
+								<li><strong>Multi-Agent AI Collaboration:</strong> Orchestrated specialized AI agents performing modular legal tasks—ranging from legislative taxonomy parsing and precedent analysis to drafting clause propositions and syntax validation.</li>
+								<li><strong>Strict Qdrant Vector RAG (Anti-Hallucination):</strong> Indexed thousands of national and regional legal documents into a high-dimensional Qdrant vector database, enforcing strict source-grounded citation retrieval to prevent factual hallucination.</li>
+								<li><strong>UU 12/2011 Compliance & Harmonization:</strong> Automated rule-checking pipelines verifying draft structures, formatting conventions, and statutory hierarchies against Law No. 12 of 2011 regarding the Formulation of Laws and Regulations.</li>
+								<li><strong>Intelligent Semantic Search:</strong> Natural language query engine capable of contextual discovery across complex legal precedents, official gazettes, and institutional mandates.</li>
+								<li><strong>Enterprise Review & Audit Trail:</strong> Role-based collaboration environment allowing legal bureaus and department heads to track draft revisions, diff comparisons, and approval signatures.</li>
+							</ul>
+
+							<h3 class="post-title" style="margin-top:2rem;">Engineering & Security Highlights</h3>
+							<ul class="achievement-list">
+								<li>Constructed a decoupled architecture utilizing Laravel, Inertia.js, and modern reactive components for seamless state management.</li>
+								<li>Engineered strict data governance and role-based access control (RBAC) protecting sensitive pre-promulgation government documents.</li>
+								<li>Implemented optimized vector embedding pipelines and caching tiers to guarantee sub-second semantic retrieval times.</li>
+								<li>Designed a clean, typography-focused editorial UI using Tailwind CSS with system-level dark mode support.</li>
+							</ul>
+						</div>
+
+						<div class="col-1a" style="margin-top:2rem;">
+							<div class="btn">
+								<CallToAction href="https://dev-kadia.pekalongankota.go.id" target="_blank">
+									Visit Live Platform
+								</CallToAction>
+								<CallToAction href="/project" target="_self">
+									Back to Projects
+								</CallToAction>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="preview">
+				<picture class="picture">
+					<Image src={coverImage} alt="KADIA Legal AI Platform Preview" loading="lazy" decoding="async" />
+				</picture>
+			</section>
+		</main>
+	</div>
+</DetailPostLayout>
+
+<style>
+.achievement-list {
+	list-style: disc;
+	padding-left: 1.5rem;
+	margin: 1rem 0;
+	color: var(--color-200);
+	line-height: 1.8;
+}
+.achievement-list li {
+	margin-bottom: 0.5rem;
+}
+.picture img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	border: 1px solid var(--color-700);
+}
+</style>

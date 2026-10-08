@@ -1,6 +1,18 @@
 [
 	{
 		"id": "1",
+		"cover": "/assets/cover/cover-kadia.png",
+		"title": "KADIA",
+		"desc": "AI-powered legal drafting platform for municipal institutions with Multi-Agent collaboration and strict Qdrant RAG",
+		"url": "https://dev-kadia.pekalongankota.go.id",
+		"detail": "/detail/kadia",
+		"category": "web,recommend,ai,tools",
+		"tag": "AI / Legal Tech",
+		"date": "2026-03-28",
+		"mark": true
+	},
+	{
+		"id": "2",
 		"cover": "/assets/cover/cover-ppid.png",
 		"title": "PPID Kota Pekalongan",
 		"desc": "Official public information & governance transparency portal for Pekalongan City with online request tracking and public archives",
@@ -12,7 +24,7 @@
 		"mark": true
 	},
 	{
-		"id": "2",
+		"id": "3",
 		"cover": "/assets/cover/cover-pramuka.png",
 		"title": "Pramuka Kota Pekalongan",
 		"desc": "Official digital scout movement portal of Kwarcab Pekalongan featuring member registries, event agendas, and news broadcasts",
