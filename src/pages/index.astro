@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Cards from "../components/Cards.astro";
 import SectionHeader from "../components/SectionHeader.astro";
-import { pageTag, pageDescription, homeTdk } from "../data/content";
+import { pageDescription, homeTdk } from "../data/content";
 ---
 
 <BaseLayout
@@ -13,7 +13,6 @@ import { pageTag, pageDescription, homeTdk } from "../data/content";
 	<div class="section hero">
 		<div class="container">
 			<SectionHeader
-				tag={pageTag.index}
 				description={pageDescription.index}
 			>
 				Febiadi Wisnu Akbar

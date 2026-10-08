@@ -12,9 +12,11 @@ const { tag, description } = Astro.props;
 	<div class="row">
 		<div class="section-content col-1a">
 			<div class="section-title">
-                <div class="title-tag">
-                    {tag}
-                </div>
+                {tag && (
+                    <div class="title-tag">
+                        {tag}
+                    </div>
+                )}
                 <h1 class="header-title font-huiwen">
                     <slot />
                 </h1>

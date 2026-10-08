@@ -97,7 +97,7 @@ interface PageTag {
 	project: string
 }
 export const pageTag: PageTag = {
-	index: 'PORTFOLIO',
+	index: '',
 	about: 'ABOUT',
 	blog: 'BLOG',
 	project: 'PROJECTS'
