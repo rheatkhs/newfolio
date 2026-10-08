@@ -12,6 +12,16 @@ export interface ProjectItem {
 
 export const projectItems: ProjectItem[] = [
 	{
+		title: "PPID Kota Pekalongan",
+		title_en: "Public Information & Governance Transparency Portal",
+		description: "The official public information service portal for the Government of Pekalongan City, providing online information requests, regulatory document archives, and real-time request tracking.",
+		date: "2026-03-25",
+		detail: "/detail/ppid",
+		url: "https://ppid.pekalongankota.go.id",
+		cover: ['cover/cover-ppid.png'],
+		tags: ['LARAVEL', 'GOVERNMENT', 'PUBLIC SERVICE', 'BOOTSTRAP']
+	},
+	{
 		title: "Warung Jus",
 		title_en: "Neobrutalist Point of Sale System",
 		description: "A Neobrutalist POS and real-time sales reporting system designed for local juice vendors, featuring order processing, transaction logging, and QRIS payment integration.",

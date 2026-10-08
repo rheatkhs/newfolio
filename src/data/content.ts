@@ -53,7 +53,7 @@ export const aboutTdk: SeoTdk = {
 export const projectTdk: SeoTdk = {
 	title: 'Projects | Febiadi Wisnu Akbar',
 	description: 'A complete inventory of tools, applications, and source repositories engineered by Febiadi Wisnu Akbar.',
-	keywords: 'Warung Jus, KMNF, BugScribe, Resumix, HALOBOX, SotoPremium, Febiadi Wisnu Akbar Projects'
+	keywords: 'PPID Kota Pekalongan, Warung Jus, KMNF, BugScribe, Resumix, HALOBOX, SotoPremium, Febiadi Wisnu Akbar Projects'
 }
 
 export const notFoundTdk: SeoTdk = {

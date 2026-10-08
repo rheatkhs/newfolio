@@ -1,0 +1,90 @@
+---
+import { Image } from "astro:assets";
+import DetailHeader from "../../components/DetailHeader.astro";
+import DetailPostLayout from "../../layouts/DetailPostLayout.astro";
+import CallToAction from "../../components/CallToAction.astro";
+import coverImage from "../../assets/projects/cover/cover-ppid.png";
+---
+<DetailPostLayout
+	title="PPID Kota Pekalongan - Public Information & Transparency Portal | Febiadi Wisnu Akbar"
+	description="Official Public Information Management Officer (PPID) portal for Pekalongan City Government, facilitating public transparency, online information requests, and real-time tracking."
+	keywords="PPID Kota Pekalongan, Public Information Openness, Government Portal, Laravel, Transparency, Pekalongan, Febiadi Wisnu Akbar"
+>
+	<div class="post">
+		<main class="post-wrapper">
+			<DetailHeader
+				tag="GOVERNMENT / PUBLIC SERVICE"
+				description="Official Municipal Transparency & Online Information Request Platform">
+				<h1 class="font-type">
+					PPID Kota Pekalongan
+				</h1>
+			</DetailHeader>
+
+			<section>
+				<div class="content">
+					<div class="row desc">
+						<div class="col-1a">
+							<h3 class="post-title">Project Overview</h3>
+							<p class="post-desc">
+								PPID (Pejabat Pengelola Informasi dan Dokumentasi) Kota Pekalongan is the official digital transparency portal mandated by Law No. 14 of 2008 on Public Information Openness (Keterbukaan Informasi Publik). Developed for the Pekalongan City Government, the platform provides citizens, researchers, and civil society with transparent, accountable access to verified government records, regulatory documents, and administrative public services.
+							</p>
+
+							<h3 class="post-title" style="margin-top:2rem;">Core Platform Capabilities</h3>
+							<ul class="achievement-list">
+								<li><strong>Online Information Request Pipeline (Permohonan Informasi):</strong> An end-to-end digital submission flow allowing citizens to request official documentation online with identity verification, reason categorization, and real-time tracking tickets.</li>
+								<li><strong>Public Information Directory (Daftar Informasi Publik - DIP):</strong> Categorized repository of periodic, immediate, and all-time public records with instant preview, document metadata, and direct PDF downloads.</li>
+								<li><strong>Request Status Tracking:</strong> Real-time ticket tracking enabling applicants to monitor verification stages, disposition to relevant regional agencies (OPD), and document delivery status.</li>
+								<li><strong>Anti-Hoaks & Clarification Hub:</strong> Fact-checking board providing official counter-narratives and verified clarifications against misinformation in the region.</li>
+								<li><strong>Public Telemetry & Statistics:</strong> Interactive dashboard presenting metrics on total requests processed, available public datasets (3.6k+ records), and document download volumes (78.8k+ downloads).</li>
+							</ul>
+
+							<h3 class="post-title" style="margin-top:2rem;">Engineering & Security Highlights</h3>
+							<ul class="achievement-list">
+								<li>Architected a secure role-based administrative workflow connecting primary PPID administrators with auxiliary PPID officers across regional departments.</li>
+								<li>Engineered strict input sanitization, file upload validation, and CSRF token protections to guard public document submission endpoints.</li>
+								<li>Built a mobile-first, responsive interface with accessibility features (contrast toggling, clear font sizing) adhering to Indonesian government digital service standards.</li>
+								<li>Implemented optimized asset caching and query indexing to deliver responsive page loading across low-bandwidth municipal networks.</li>
+							</ul>
+						</div>
+
+						<div class="col-1a" style="margin-top:2rem;">
+							<div class="btn">
+								<CallToAction href="https://ppid.pekalongankota.go.id" target="_blank">
+									Visit Live Portal
+								</CallToAction>
+								<CallToAction href="/project" target="_self">
+									Back to Projects
+								</CallToAction>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="preview">
+				<picture class="picture">
+					<Image src={coverImage} alt="PPID Kota Pekalongan Portal Preview" loading="lazy" decoding="async" />
+				</picture>
+			</section>
+		</main>
+	</div>
+</DetailPostLayout>
+
+<style>
+.achievement-list {
+	list-style: disc;
+	padding-left: 1.5rem;
+	margin: 1rem 0;
+	color: var(--color-200);
+	line-height: 1.8;
+}
+.achievement-list li {
+	margin-bottom: 0.5rem;
+}
+.picture img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	border: 1px solid var(--color-700);
+}
+</style>
