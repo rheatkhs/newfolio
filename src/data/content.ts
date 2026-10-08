@@ -34,8 +34,8 @@ interface SeoTdk {
 
 export const homeTdk: SeoTdk = {
 	title: 'Febiadi Wisnu Akbar | Full-stack Developer & Security Enthusiast',
-	description: 'Personal portfolio of Febiadi Wisnu Akbar (sotostack), Programmer at Dinkominfo Pekalongan specialized in Next.js, Flutter, and Bug Bounty Hunting.',
-	keywords: 'Febiadi Wisnu Akbar, sotostack, Dinkominfo Pekalongan, Full-stack Developer, Next.js Developer, Flutter, Bug Bounty, Security, Pekalongan, Indonesia'
+	description: 'Portfolio of Febiadi Wisnu Akbar — Software Engineer specializing in scalable full-stack architectures and security-focused software development.',
+	keywords: 'Febiadi Wisnu Akbar, sotostack, Software Engineer, Full-stack Developer, Next.js, TypeScript, React, Flutter, Cybersecurity, Bug Bounty, Web Security'
 }
 
 export const blogTdk: SeoTdk = {
@@ -110,7 +110,7 @@ interface PageDescription {
 	about?: string
 }
 export const pageDescription: PageDescription = {
-	index: "I'm Febiadi Wisnu Akbar, a Programmer at DINKOMINFO Kota Pekalongan. Specialized in web & mobile development with a keen eye for security research and bug bounty hunting.",
+	index: "Software Engineer specializing in scalable full-stack web & mobile architectures with a security-first engineering mindset. Passionate about building high-performance systems and resilient digital experiences.",
 	project: "A complete inventory of tools, applications, and source repositories I've engineered.",
 	about: 'Full-stack Developer and Security Enthusiast building premium digital experiences and secure systems.',
 	blog: 'Articles, write-ups, and technical notes on web architecture, software engineering, and cybersecurity.',
