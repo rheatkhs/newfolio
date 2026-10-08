@@ -3,7 +3,6 @@
 import ThemeToggle from './ThemeToggle.astro';
 import Effect from "../effects/Effect.astro";
 import {nav} from '../data/content';
-import EffectSwitch from "../effects/EffectSwitch.astro";
 import NavMobile from "../components/NavMobile.astro";
 import GitHubStars from './GitHubStars.astro';
 ---
@@ -11,16 +10,13 @@ import GitHubStars from './GitHubStars.astro';
 <nav>
 	<div class="container nav-wrapper">
 		<div class="menu-header">
-			<div class="site-title">
-				<a href="/" class="author">
-					<figure class="avatar">
-						<img class="avatar__img"
-							src={nav.avatar} alt=""
-							draggable="false">
-					</figure>
-				</a>
-				<EffectSwitch  transition:persist/>
-			</div>
+			<a href="/" class="site-brand" aria-label="Febiadi Wisnu Akbar">
+				<span class="brand-symbol">&lt;&#47;&gt;</span>
+				<span class="brand-text">
+					<span class="brand-name">Febiadi <span class="brand-accent">Wisnu</span></span>
+					<span class="brand-badge">SWE</span>
+				</span>
+			</a>
 		</div>
 		<div id="menu-content">
 			<div class="menu-footer pc-nav">
@@ -122,44 +118,91 @@ import GitHubStars from './GitHubStars.astro';
 		padding: 0;
 	}
 
-	.site-title {
-		display: flex;
-		gap: 0.5rem;
-		justify-content: flex-start;
+	.site-brand {
+		display: inline-flex;
 		align-items: center;
-		line-height: 1.1;
-		color: var(--color-0);
-		font-weight: 400;
+		gap: 10px;
 		text-decoration: none;
-		font-size: 1.5rem;
-		letter-spacing: 0.1px;
-		&:hover{
-			color:rgb(236, 72, 113);
+		line-height: 1;
+		transition: opacity 0.2s ease;
+
+		&:hover {
+			opacity: 0.95;
+
+			.brand-symbol {
+				transform: rotate(10deg) scale(1.08);
+				border-color: var(--color-blue);
+				color: var(--color-blue);
+				box-shadow: 0 0 12px rgba(77, 167, 232, 0.35);
+			}
+
+			.brand-accent {
+				color: #38bdf8;
+			}
 		}
 	}
-	.logo {
-		max-height: 30px;
+
+	.brand-symbol {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 34px;
+		height: 34px;
+		border-radius: 9px;
+		background: rgba(255, 255, 255, 0.04);
+		border: 1px solid var(--border);
+		color: var(--color-200);
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: -1px;
+		transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+		flex-shrink: 0;
 	}
-	.logo path{
-		fill: var(--color-100);
+
+	.brand-text {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
 	}
-    .avatar{
-        display: inline-block;
-        position: relative;
-        line-height: 1;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-    }
-	.avatar__img{
-		display: block;
-		border-radius: 50%;
-    }
-	.avatar__name{
-		line-height: normal;
-		font-weight: 400;
-		font-size: 22px;
-    }
+
+	.brand-name {
+		font-family: var(--font-brand);
+		font-size: 18px;
+		font-weight: 700;
+		letter-spacing: -0.3px;
+		color: var(--color-100);
+		white-space: nowrap;
+	}
+
+	.brand-accent {
+		color: var(--color-blue);
+		transition: color 0.25s ease;
+	}
+
+	.brand-badge {
+		display: inline-flex;
+		align-items: center;
+		padding: 2px 7px;
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+		border-radius: 4px;
+		background: rgba(77, 167, 232, 0.12);
+		border: 1px solid rgba(77, 167, 232, 0.25);
+		color: var(--color-blue);
+		line-height: 1.4;
+	}
+
+	@media (max-width: 480px) {
+		.brand-badge {
+			display: none;
+		}
+		.brand-name {
+			font-size: 16px;
+		}
+	}
 	.nav-wrapper{
 		display: flex;
 			align-items: center;
