@@ -32,6 +32,16 @@ export const projectItems: ProjectItem[] = [
 		tags: ['THREE.JS', '3D SIMULATION', 'EDTECH', 'GAMIFICATION', 'TAILWIND']
 	},
 	{
+		title: "SIGAP Kota Pekalongan",
+		title_en: "Government Internship Information & Governance System",
+		description: "The official government internship management platform for the City of Pekalongan, modernizing cross-department internship placements across 31 OPD units, live performance appraisal tracking, and digital certificate verification.",
+		date: "2026-04-02",
+		detail: "/detail/sigap",
+		url: "https://sigap.pekalongankota.go.id",
+		cover: ['cover/cover-sigap.png'],
+		tags: ['LARAVEL', 'GOVERNMENT', 'PUBLIC SERVICE', 'DINKOMINFO', 'TAILWIND']
+	},
+	{
 		title: "KADIA",
 		title_en: "Knowledge-Based Assistant for Drafting Institutional Acts",
 		description: "An AI-powered legal technology platform designed for municipal government institutions to draft, harmonize, and validate legal products using Multi-Agent AI and strict Qdrant vector RAG.",

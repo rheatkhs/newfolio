@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import DetailHeader from "../../components/DetailHeader.astro";
+import DetailPostLayout from "../../layouts/DetailPostLayout.astro";
+import CallToAction from "../../components/CallToAction.astro";
+import coverImage from "../../assets/projects/cover/cover-sigap.png";
+---
+<DetailPostLayout
+	title="SIGAP Kota Pekalongan - Sistem Informasi Magang Pemerintah | Febiadi Wisnu Akbar"
+	description="Sistem Informasi Magang Pemerintah (SIGAP) Kota Pekalongan is the official government internship management platform streamlining OPD placement distribution, performance appraisals, and digital certificate verification."
+	keywords="SIGAP Kota Pekalongan, Sistem Informasi Magang Pemerintah, Dinkominfo Pekalongan, Government Portal, Laravel, Public Service, Febiadi Wisnu Akbar"
+>
+	<div class="post">
+		<main class="post-wrapper">
+			<DetailHeader
+				tag="GOVERNMENT DIGITAL TRANSFORMATION & PUBLIC SERVICE"
+				description="Sistem Informasi Magang Pemerintah Kota Pekalongan">
+				<h1 class="font-type">
+					SIGAP Kota Pekalongan
+				</h1>
+			</DetailHeader>
+
+			<section>
+				<div class="content">
+					<div class="row desc">
+						<div class="col-1a">
+							<h3 class="post-title">Project Overview</h3>
+							<p class="post-desc">
+								<strong>SIGAP (Sistem Informasi Magang Pemerintah)</strong> is the official municipal internship governance platform developed for the City Government of Pekalongan through the Department of Communication and Information Technology (Dinas Komunikasi dan Informatika). Designed as a strategic bridge between higher education institutions and municipal public administration, SIGAP digitalizes and standardizes internship services across 31 Regional Apparatus Organizations (Organisasi Perangkat Daerah / OPD).
+							</p>
+
+							<h3 class="post-title" style="margin-top:2rem;">Core Architecture & Capabilities</h3>
+							<ul class="achievement-list">
+								<li><strong>Inter-OPD Placement & Quota Distribution:</strong> Centralized placement coordination facilitating structured quota distribution across 31 municipal departments tailored to applicant competencies and academic fields.</li>
+								<li><strong>Measurable Performance & Activity Tracking:</strong> Daily digital activity logging and mentor appraisal rubrics enabling department supervisors to systematically evaluate intern contributions and competencies.</li>
+								<li><strong>Digital E-Certificate Issuance & Verification:</strong> Automated generation of tamper-evident completion certificates equipped with quick-response verification codes for seamless credential validation.</li>
+								<li><strong>Real-Time Public Telemetry:</strong> Live data dashboard tracking active participant cohorts, participating agencies, and certified alumni to ensure governance transparency.</li>
+								<li><strong>SPBE Compliant Data Governance:</strong> Role-based access control protecting participant personal information (PII) and official institutional evaluations in accordance with electronic government service standards.</li>
+							</ul>
+
+							<h3 class="post-title" style="margin-top:2rem;">Engineering Highlights</h3>
+							<ul class="achievement-list">
+								<li>Engineered using robust Laravel architecture paired with modern reactive components and clean Tailwind CSS styling.</li>
+								<li>Constructed with responsive mobile-friendly layouts enabling students and civil servants to operate effortlessly on mobile devices.</li>
+								<li>Optimized database schemas and caching layers guaranteeing sub-second response times across high-traffic registration windows.</li>
+							</ul>
+						</div>
+
+						<div class="col-1a" style="margin-top:2rem;">
+							<div class="btn">
+								<CallToAction href="https://sigap.pekalongankota.go.id" target="_blank">
+									Visit SIGAP Portal
+								</CallToAction>
+								<CallToAction href="/project" target="_self">
+									Back to Projects
+								</CallToAction>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="preview">
+				<picture class="picture">
+					<Image src={coverImage} alt="SIGAP Kota Pekalongan Preview" loading="lazy" decoding="async" />
+				</picture>
+			</section>
+		</main>
+	</div>
+</DetailPostLayout>
+
+<style>
+.achievement-list {
+	list-style: disc;
+	padding-left: 1.5rem;
+	margin: 1rem 0;
+	color: var(--color-200);
+	line-height: 1.8;
+}
+.achievement-list li {
+	margin-bottom: 0.5rem;
+}
+.picture img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	border: 1px solid var(--color-700);
+}
+</style>
