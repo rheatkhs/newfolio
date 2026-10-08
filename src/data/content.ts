@@ -53,7 +53,7 @@ export const aboutTdk: SeoTdk = {
 export const projectTdk: SeoTdk = {
 	title: 'Projects | Febiadi Wisnu Akbar',
 	description: 'A complete inventory of tools, applications, and source repositories engineered by Febiadi Wisnu Akbar.',
-	keywords: 'MEVIA 3D, KADIA, NeoStream, Ferrari 296 GT3, Lyricscape, PPID Kota Pekalongan, Pramuka Kota Pekalongan, Three.js 3D, EdTech, Legal AI, IPTV, HLS Streaming, WebGL, TextAlive API, Febiadi Wisnu Akbar Projects'
+	keywords: 'Kopi Kenangan, MEVIA 3D, KADIA, NeoStream, Ferrari 296 GT3, Lyricscape, PPID Kota Pekalongan, Pramuka Kota Pekalongan, Brand Experience, F&B, Three.js 3D, EdTech, Legal AI, IPTV, HLS Streaming, WebGL, TextAlive API, Febiadi Wisnu Akbar Projects'
 }
 
 export const notFoundTdk: SeoTdk = {
@@ -122,6 +122,7 @@ export interface FilterItem {
 }
 export const filterItems: FilterItem[] = [
 	{ content: "💎 Featured", dataGroup: "recommend" },
+	{ content: "Brand & Commerce", dataGroup: "brand" },
 	{ content: "AI & Tools", dataGroup: "ai" },
 	{ content: "Streaming & Media", dataGroup: "media" },
 	{ content: "3D & Creative", dataGroup: "3d" },

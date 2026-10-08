@@ -12,6 +12,16 @@ export interface ProjectItem {
 
 export const projectItems: ProjectItem[] = [
 	{
+		title: "Kopi Kenangan",
+		title_en: "Brand Showcase & Digital Experience Portal",
+		description: "An interactive brand experience and digital product catalog for Kopi Kenangan, celebrating Indonesia's premier grab-and-go coffee chain with interactive origin stories, product showcases, and retail store integrations.",
+		date: "2026-04-06",
+		detail: "/detail/kopken",
+		url: "https://kopken.mevia.web.id",
+		cover: ['cover/cover-kopken.png'],
+		tags: ['REACT', 'BRAND EXPERIENCE', 'UI/UX', 'TAILWIND', 'F&B']
+	},
+	{
 		title: "MEVIA 3D",
 		title_en: "Modern Eco Virtual Interactive Adventure",
 		description: "The official 3D interactive environmental education platform for SMA Don Bosco 2 Jakarta, combining real-time 3D waste sorting simulation (Bank Sampah 3D), board-game gamification (Eco Challenge), and school leaderboards.",

@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import DetailHeader from "../../components/DetailHeader.astro";
+import DetailPostLayout from "../../layouts/DetailPostLayout.astro";
+import CallToAction from "../../components/CallToAction.astro";
+import coverImage from "../../assets/projects/cover/cover-kopken.png";
+---
+<DetailPostLayout
+	title="Kopi Kenangan - Brand Showcase & Digital Experience Portal | Febiadi Wisnu Akbar"
+	description="Interactive digital brand experience and product catalog for Kopi Kenangan, highlighting Indonesia's leading grab-and-go coffee chain, origin story, and beverage catalogue."
+	keywords="Kopi Kenangan, Brand Experience, F&B Portal, Coffee Chain, React, UI/UX, Web Design, Febiadi Wisnu Akbar"
+>
+	<div class="post">
+		<main class="post-wrapper">
+			<DetailHeader
+				tag="BRAND EXPERIENCE & DIGITAL COMMERCE"
+				description="Modern Brand Experience & Product Catalog Portal">
+				<h1 class="font-type">
+					Kopi Kenangan
+				</h1>
+			</DetailHeader>
+
+			<section>
+				<div class="content">
+					<div class="row desc">
+						<div class="col-1a">
+							<h3 class="post-title">Project Overview</h3>
+							<p class="post-desc">
+								<strong>Kopi Kenangan</strong> is Indonesia's fastest-growing grab-and-go retail coffee brand and a recognized F&B unicorn across Southeast Asia. This interactive digital brand showcase was designed to articulate the company's inspiring heritage—from its inaugural outlet founded in 2017 to its prestigious crowning as World Brand of the Year (Café Chain category) at the World Branding Awards in London.
+							</p>
+
+							<h3 class="post-title" style="margin-top:2rem;">Core Architecture & Capabilities</h3>
+							<ul class="achievement-list">
+								<li><strong>Interactive Brand Journey Timeline:</strong> Engaging milestone progression chronicling the brand's evolution across Phase 01 (2017 outlet launch), Phase 02 (first nationwide Halal certification from MUI), and Phase 03 (London World Brand of the Year triumph).</li>
+								<li><strong>Curated Product & Beverage Catalog:</strong> Rich visual showcase presenting signature items—such as Kopi Kenangan Mantan, artisan espresso beverages, and bakery pairings—highlighting 100% fresh Indonesian local ingredients.</li>
+								<li><strong>Retail Ecosystem & App Order Gateway:</strong> Seamless call-to-actions funneling visitors toward online app ordering, nearby outlet discovery, and customer loyalty rewards.</li>
+								<li><strong>High-End Editorial Aesthetics:</strong> Sophisticated typographic hierarchy, warm organic earth tones, and responsive media framing designed to evoke a luxury café ambiance.</li>
+								<li><strong>Leadership & Origins Spotlight:</strong> Executive profiles spotlighting founders Edward Tirtanata, James Prananto, and Cynthia Chaerunnisa along with their vision to bring Indonesian coffee culture to the world.</li>
+							</ul>
+
+							<h3 class="post-title" style="margin-top:2rem;">Engineering Highlights</h3>
+							<ul class="achievement-list">
+								<li>Crafted with modern responsive layouts and accessible typography for fluid cross-device exploration.</li>
+								<li>Optimized high-resolution photographic assets ensuring rapid load speeds on mobile networks.</li>
+								<li>Seamless interactive micro-animations elevating user engagement throughout navigation and catalog inspection.</li>
+							</ul>
+						</div>
+
+						<div class="col-1a" style="margin-top:2rem;">
+							<div class="btn">
+								<CallToAction href="https://kopken.mevia.web.id" target="_blank">
+									Visit Live Showcase
+								</CallToAction>
+								<CallToAction href="/project" target="_self">
+									Back to Projects
+								</CallToAction>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="preview">
+				<picture class="picture">
+					<Image src={coverImage} alt="Kopi Kenangan Brand Showcase Preview" loading="lazy" decoding="async" />
+				</picture>
+			</section>
+		</main>
+	</div>
+</DetailPostLayout>
+
+<style>
+.achievement-list {
+	list-style: disc;
+	padding-left: 1.5rem;
+	margin: 1rem 0;
+	color: var(--color-200);
+	line-height: 1.8;
+}
+.achievement-list li {
+	margin-bottom: 0.5rem;
+}
+.picture img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	border: 1px solid var(--color-700);
+}
+</style>
