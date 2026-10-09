@@ -112,33 +112,16 @@ export const certificates: CertificateItem[] = [
 	}
 ];
 
-export interface RecognitionItem {
-	id: string;
-	title: string;
-	organization: string;
-	issuerTitle?: string;
-	signer?: string;
-	credentialId: string;
-	issueDate: string;
-	category: string;
-	badge: string;
-	statement: string;
-	skills: string[];
-	image: string;
-	pdfUrl: string;
-}
-
-export const securityRecognitions: RecognitionItem[] = [
+export const honorsRecognitions: CertificateItem[] = [
 	{
 		id: "giken-kaizen-security",
 		title: "Certificate of Appreciation — Security Contribution",
-		organization: "PT Giken Kaizen Educenter",
-		signer: "Difa Aufar Hakim, S.S (Chief Executive Officer)",
+		issuer: "PT Giken Kaizen Educenter",
+		organization: "Information Technology & Security",
 		credentialId: "001/ITRGT-GKE/CERT/IV/2026",
-		issueDate: "April 20, 2026",
-		category: "Vulnerability Disclosure & Security",
-		badge: "Security Hall of Fame",
-		statement: "For the valuable support and contribution extended toward strengthening the security and reliability of PT Giken Kaizen Educenter digital systems, fostering a safer and more reliable digital environment.",
+		issueDate: "April 2026",
+		category: "Vulnerability Disclosure",
+		badge: "Security Recognition",
 		skills: [
 			"Vulnerability Assessment",
 			"Responsible Disclosure",
@@ -149,3 +132,5 @@ export const securityRecognitions: RecognitionItem[] = [
 		pdfUrl: "/assets/certificates/security-appreciation-giken-kaizen.pdf"
 	}
 ];
+
+export const securityRecognitions = honorsRecognitions;

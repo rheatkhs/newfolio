@@ -5,7 +5,7 @@ import SectionHeader from "../components/SectionHeader.astro";
 import CallToAction from "../components/CallToAction.astro";
 import { pageTag, pageDescription, aboutTdk } from '../data/content';
 import myPortrait from "../assets/portrait.jpg";
-import { certificates, securityRecognitions } from '../data/certificates';
+import { certificates, honorsRecognitions } from '../data/certificates';
 ---
 <BlogPostLayout
 	title={aboutTdk.title || ''}
@@ -102,87 +102,6 @@ import { certificates, securityRecognitions } from '../data/certificates';
 				</div>
 			</section>
 
-			<!-- Honors & Security Recognitions Section -->
-			<section>
-				<h3 class="post-title">Honors & Security Recognitions</h3>
-				<p class="section-intro">
-					Formal letters of appreciation and recognitions awarded for responsible vulnerability disclosure, web security defense, and digital systems hardening.
-				</p>
-				<div class="content">
-					<div class="recognitions-list">
-						{securityRecognitions.map((item) => (
-							<article class="recognition-card">
-								<a
-									href={item.pdfUrl}
-									target="_blank"
-									class="cert-thumb-link recognition-thumb-link"
-									aria-label={`View ${item.title} certificate PDF`}
-								>
-									<img
-										src={item.image}
-										alt={item.title}
-										loading="lazy"
-										class="cert-thumb"
-										style="width: 100%; height: auto; aspect-ratio: 1683 / 1190; object-fit: contain; display: block;"
-									/>
-								</a>
-
-								<div class="cert-details recognition-details">
-									<div class="cert-row-top">
-										<div class="cert-badge-group">
-											<span class="cert-badge recognition-badge">
-												<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: -1px;">
-													<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-												</svg>
-												{item.badge}
-											</span>
-											<span class="cert-category">&bull; {item.category}</span>
-										</div>
-										<div class="cert-actions">
-											<a href={item.pdfUrl} target="_blank" class="cert-btn-pdf recognition-btn-view">
-												<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-													<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-													<polyline points="14 2 14 8 20 8"></polyline>
-													<line x1="16" y1="13" x2="8" y2="13"></line>
-													<line x1="16" y1="17" x2="8" y2="17"></line>
-												</svg>
-												<span>View Certificate</span>
-											</a>
-										</div>
-									</div>
-
-									<h4 class="cert-title">
-										<a href={item.pdfUrl} target="_blank">{item.title}</a>
-									</h4>
-
-									<p class="cert-issuer">
-										<strong>{item.organization}</strong>
-										{item.signer && <span class="cert-org"> &bull; {item.signer}</span>}
-									</p>
-
-									<blockquote class="recognition-quote">
-										&ldquo;{item.statement}&rdquo;
-									</blockquote>
-
-									<div class="cert-meta">
-										<span class="cert-meta-item">Awarded: {item.issueDate}</span>
-										<span class="cert-meta-id">
-											Credential: <code class="cert-code">{item.credentialId}</code>
-										</span>
-									</div>
-
-									<div class="cert-skills">
-										{item.skills.map((skill) => (
-											<span class="cert-skill-pill recognition-skill-pill">{skill}</span>
-										))}
-									</div>
-								</div>
-							</article>
-						))}
-					</div>
-				</div>
-			</section>
-
 			<!-- Licenses & Certifications Section -->
 			<section>
 				<h3 class="post-title">Licenses & Certifications</h3>
@@ -244,6 +163,74 @@ import { certificates, securityRecognitions } from '../data/certificates';
 									<div class="cert-meta">
 										<span class="cert-meta-item">Issued: {cert.issueDate}</span>
 										{cert.hours && <span class="cert-meta-item">&bull; {cert.hours}</span>}
+										<span class="cert-meta-id">
+											ID: <code class="cert-code">{cert.credentialId}</code>
+										</span>
+									</div>
+
+									<div class="cert-skills">
+										{cert.skills.map((skill) => (
+											<span class="cert-skill-pill">{skill}</span>
+										))}
+									</div>
+								</div>
+							</article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- Honors & Recognitions Section -->
+			<section>
+				<h3 class="post-title">Honors & Recognitions</h3>
+				<div class="content">
+					<div class="certs-list">
+						{honorsRecognitions.map((cert) => (
+							<article class="cert-card">
+								<a
+									href={cert.pdfUrl}
+									target="_blank"
+									class="cert-thumb-link"
+									aria-label={`View ${cert.title} certificate PDF`}
+								>
+									<img
+										src={cert.image}
+										alt={cert.title}
+										loading="lazy"
+										class="cert-thumb"
+										style="width: 100%; height: auto; aspect-ratio: 1683 / 1190; object-fit: contain; display: block;"
+									/>
+								</a>
+
+								<div class="cert-details">
+									<div class="cert-row-top">
+										<div class="cert-badge-group">
+											<span class="cert-badge">{cert.badge}</span>
+											<span class="cert-category">&bull; {cert.category}</span>
+										</div>
+										<div class="cert-actions">
+											<a href={cert.pdfUrl} target="_blank" class="cert-btn-pdf">
+												<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+													<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+													<polyline points="14 2 14 8 20 8"></polyline>
+													<line x1="16" y1="13" x2="8" y2="13"></line>
+													<line x1="16" y1="17" x2="8" y2="17"></line>
+												</svg>
+												<span>View PDF</span>
+											</a>
+										</div>
+									</div>
+
+									<h4 class="cert-title">
+										<a href={cert.pdfUrl} target="_blank">{cert.title}</a>
+									</h4>
+
+									<p class="cert-issuer">
+										{cert.issuer} &bull; <span class="cert-org">{cert.organization}</span>
+									</p>
+
+									<div class="cert-meta">
+										<span class="cert-meta-item">Issued: {cert.issueDate}</span>
 										<span class="cert-meta-id">
 											ID: <code class="cert-code">{cert.credentialId}</code>
 										</span>
@@ -564,79 +551,8 @@ import { certificates, securityRecognitions } from '../data/certificates';
 		line-height: 1.3;
 	}
 
-	/* Honors & Security Recognitions Styling */
-	.section-intro {
-		font-size: 0.875rem;
-		color: var(--color-400);
-		margin: -0.25rem 0 1rem;
-		line-height: 1.55;
-	}
-
-	.recognitions-list {
-		display: flex;
-		flex-direction: column;
-		gap: 14px;
-		margin: 0.75rem 0 1.5rem;
-	}
-
-	.recognition-card {
-		display: flex;
-		align-items: flex-start;
-		gap: 18px;
-		padding: 16px 18px;
-		border: 1px solid var(--color-700);
-		border-left: 3.5px solid #10b981;
-		border-radius: 10px;
-		background: var(--color-900);
-		transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-	}
-
-	.recognition-card:hover {
-		border-color: #10b981;
-		transform: translateY(-1px);
-		box-shadow: 0 4px 20px rgba(16, 185, 129, 0.08);
-	}
-
-	.recognition-badge {
-		background: rgba(16, 185, 129, 0.12);
-		border: 1px solid rgba(16, 185, 129, 0.35);
-		color: #10b981;
-		display: inline-flex;
-		align-items: center;
-	}
-
-	.recognition-btn-view {
-		border: 1px solid rgba(16, 185, 129, 0.35);
-		background: rgba(16, 185, 129, 0.08);
-		color: #10b981 !important;
-	}
-
-	.recognition-btn-view:hover {
-		background: rgba(16, 185, 129, 0.18);
-		border-color: #10b981;
-	}
-
-	.recognition-quote {
-		margin: 7px 0 5px;
-		padding: 7px 12px;
-		border-left: 2px solid rgba(16, 185, 129, 0.5);
-		background: rgba(16, 185, 129, 0.04);
-		border-radius: 0 6px 6px 0;
-		font-size: 0.825rem;
-		font-style: italic;
-		color: var(--color-200);
-		line-height: 1.5;
-	}
-
-	.recognition-skill-pill {
-		border-color: rgba(16, 185, 129, 0.25);
-		background: rgba(16, 185, 129, 0.06);
-		color: var(--color-200);
-	}
-
 	@media (max-width: 640px) {
-		.cert-card,
-		.recognition-card {
+		.cert-card {
 			flex-direction: column;
 			align-items: stretch;
 			gap: 12px;
