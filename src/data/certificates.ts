@@ -111,3 +111,41 @@ export const certificates: CertificateItem[] = [
 		verifyUrl: "https://goo.gle/jvc-cert-verifier"
 	}
 ];
+
+export interface RecognitionItem {
+	id: string;
+	title: string;
+	organization: string;
+	issuerTitle?: string;
+	signer?: string;
+	credentialId: string;
+	issueDate: string;
+	category: string;
+	badge: string;
+	statement: string;
+	skills: string[];
+	image: string;
+	pdfUrl: string;
+}
+
+export const securityRecognitions: RecognitionItem[] = [
+	{
+		id: "giken-kaizen-security",
+		title: "Certificate of Appreciation — Security Contribution",
+		organization: "PT Giken Kaizen Educenter",
+		signer: "Difa Aufar Hakim, S.S (Chief Executive Officer)",
+		credentialId: "001/ITRGT-GKE/CERT/IV/2026",
+		issueDate: "April 20, 2026",
+		category: "Vulnerability Disclosure & Security",
+		badge: "Security Hall of Fame",
+		statement: "For the valuable support and contribution extended toward strengthening the security and reliability of PT Giken Kaizen Educenter digital systems, fostering a safer and more reliable digital environment.",
+		skills: [
+			"Vulnerability Assessment",
+			"Responsible Disclosure",
+			"Web Application Security",
+			"System Hardening"
+		],
+		image: "/assets/certificates/security-appreciation-giken-kaizen.png",
+		pdfUrl: "/assets/certificates/security-appreciation-giken-kaizen.pdf"
+	}
+];
