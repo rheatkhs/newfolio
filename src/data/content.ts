@@ -1,6 +1,14 @@
+function formatSiteUrl(val?: string): string {
+    if (!val) return "https://works.mevia.web.id/";
+    const trimmed = String(val).trim().replace(/^['"]|['"]$/g, '');
+    if (!trimmed || trimmed === "undefined" || trimmed === "null") return "https://works.mevia.web.id/";
+    const withProtocol = (trimmed.startsWith("http://") || trimmed.startsWith("https://")) ? trimmed : `https://${trimmed}`;
+    return withProtocol.endsWith("/") ? withProtocol : `${withProtocol}/`;
+}
+
 export const siteConfig = {
     siteName: import.meta.env.PUBLIC_SITE_NAME || "Febiadi Wisnu Akbar",
-    siteUrl: import.meta.env.PUBLIC_SITE_URL || "https://works.mevia.web.id/",
+    siteUrl: formatSiteUrl(import.meta.env.PUBLIC_SITE_URL),
 }
 
 interface NavItem {

@@ -2,7 +2,27 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
-const SITE_URL = process.env.PUBLIC_SITE_URL || 'https://works.mevia.web.id/';
+function resolveSiteUrl() {
+  const raw = process.env.PUBLIC_SITE_URL || process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL || 'https://works.mevia.web.id/';
+  let url = String(raw).trim().replace(/^['"]|['"]$/g, '');
+  if (!url || url === 'undefined' || url === 'null') {
+    return 'https://works.mevia.web.id/';
+  }
+  if (!url.startsWith('http://') && !url.startsWith('https://')) {
+    url = `https://${url}`;
+  }
+  if (!url.endsWith('/')) {
+    url = `${url}/`;
+  }
+  try {
+    new URL(url);
+    return url;
+  } catch {
+    return 'https://works.mevia.web.id/';
+  }
+}
+
+const SITE_URL = resolveSiteUrl();
 export default defineConfig({
   markdown: {
     shikiConfig: {
