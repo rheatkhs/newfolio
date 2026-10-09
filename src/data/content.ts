@@ -47,8 +47,8 @@ export const blogTdk: SeoTdk = {
 
 export const aboutTdk: SeoTdk = {
 	title: 'About | Febiadi Wisnu Akbar',
-	description: 'Programmer and Graphic Designer at Dinkominfo Pekalongan specializing in web development, mobile applications, cybersecurity, and visual art direction.',
-	keywords: 'Febiadi Wisnu Akbar, About, Experience, Full-stack Developer, Graphic Designer, Dinkominfo Pekalongan, Indonesia'
+	description: 'Software Engineer & Graphic Designer based in Pekalongan, Indonesia, specializing in web development, mobile applications, cybersecurity, and visual art direction.',
+	keywords: 'Febiadi Wisnu Akbar, About, Experience, Software Engineer, Full-stack Developer, Graphic Designer, Pekalongan, Indonesia'
 }
 
 export const designTdk: SeoTdk = {
@@ -123,7 +123,7 @@ export const pageDescription: PageDescription = {
 	index: "Software Engineer & Graphic Designer specializing in scalable full-stack web architectures, cybersecurity, and visual design. Blending technical engineering with creative aesthetics.",
 	project: "A complete inventory of tools, applications, and source repositories I've engineered.",
 	design: "A curated collection of poster designs, typography experiments, anime graphics, and sports artwork.",
-	about: 'Full-stack Developer, Security Enthusiast & Graphic Designer building secure digital experiences and expressive visual artwork.',
+	about: 'Software Engineer & Graphic Designer crafting resilient digital systems, secure web applications, and expressive visual design.',
 	blog: 'Articles, write-ups, and technical notes on web architecture, software engineering, and cybersecurity.',
 }
 
