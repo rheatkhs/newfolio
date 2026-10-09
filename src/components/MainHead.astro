@@ -7,14 +7,33 @@ interface Props {
 	description?: string | undefined;
 	keywords?: string | undefined;
 }
-const { title, description,keywords } = Astro.props;
+const { title, description, keywords } = Astro.props;
+const siteBase = Astro.site || new URL("https://works.mevia.web.id/");
+const canonicalUrl = new URL(Astro.url.pathname, siteBase).href;
+const ogImage = new URL("/og.jpg", siteBase).href;
 ---
 
 <meta charset="UTF-8" />
-<meta name="description" property="og:description" content={description} />
+<meta name="description" content={description} />
 <meta name="keywords" content={keywords} />
+<link rel="canonical" href={canonicalUrl} />
 <link rel="sitemap" href="/sitemap-index.xml" />
-<link rel="alternate" type="application/rss+xml" title={title} href={new URL("rss.xml", Astro.site)} />
+<link rel="alternate" type="application/rss+xml" title={title} href={new URL("rss.xml", siteBase)} />
+
+<!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:site_name" content="Febiadi Wisnu Akbar" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
 
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">

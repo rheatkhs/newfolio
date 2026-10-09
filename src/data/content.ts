@@ -1,6 +1,6 @@
 export const siteConfig = {
     siteName: import.meta.env.PUBLIC_SITE_NAME || "Febiadi Wisnu Akbar",
-    siteUrl: import.meta.env.PUBLIC_SITE_URL || "https://rheatkhs.kmnf.site/",
+    siteUrl: import.meta.env.PUBLIC_SITE_URL || "https://works.mevia.web.id/",
 }
 
 interface NavItem {
