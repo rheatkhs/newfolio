@@ -67,36 +67,54 @@ import { certificates, honorsRecognitions } from '../data/certificates';
 				<h3 class="post-title">Experience</h3>
 				<div class="content timeline">
 					<div class="timeline-item">
-						<h4>Programmer <span>— DINKOMINFO Kota Pekalongan</span></h4>
+						<div class="timeline-header">
+							<h4>Software Engineer <span>— Dinas Komunikasi dan Informatika Kota Pekalongan</span></h4>
+							<span class="timeline-date">Feb 2025 &mdash; Present</span>
+						</div>
+						<p class="timeline-location">Pekalongan, Indonesia</p>
 						<ul>
-							<li>Developing and maintaining internal web applications for municipal government digital services.</li>
+							<li>Developing and maintaining internal web applications for local government services.</li>
 							<li>Implementing secure and scalable backend solutions using PHP and Node.js.</li>
-							<li>Collaborating with cross-functional teams to improve public digital platforms and data security.</li>
+							<li>Collaborating with cross-functional teams to improve digital public services.</li>
 						</ul>
 					</div>
 
 					<div class="timeline-item">
-						<h4>Front-End Developer</h4>
+						<div class="timeline-header">
+							<h4>Front-End Developer <span>— OFFTHEGRID Development Team</span></h4>
+							<span class="timeline-date">2022 &mdash; 2025</span>
+						</div>
+						<p class="timeline-location">Pekalongan, Indonesia</p>
 						<ul>
-							<li>Leading front-end development of creative digital products and responsive web applications.</li>
-							<li>Implementing clean, high-performance user interfaces using modern JavaScript frameworks.</li>
-							<li>Working closely with backend engineers to integrate APIs and streamline UX delivery.</li>
+							<li>Leading the front-end development of creative digital projects and web applications.</li>
+							<li>Implementing responsive and high-performance user interfaces using modern frameworks.</li>
+							<li>Collaborating with full-stack developers to deliver seamless user experiences.</li>
 						</ul>
 					</div>
 
 					<div class="timeline-item">
-						<h4>IT Support</h4>
+						<div class="timeline-header">
+							<h4>IT Support <span>— Institut Widya Pratama</span></h4>
+							<span class="timeline-date">2022 &mdash; 2023</span>
+						</div>
+						<p class="timeline-location">Pekalongan, Indonesia</p>
 						<ul>
-							<li>Maintained campus IT infrastructure, local area networks, and server systems.</li>
-							<li>Troubleshot hardware, software, and connectivity issues across institutional facilities.</li>
+							<li>Maintaining campus IT infrastructure and providing technical assistance to students and staff.</li>
+							<li>Troubleshooting hardware and software issues across the institution.</li>
+							<li>Assisting in the management of local network and server systems.</li>
 						</ul>
 					</div>
 
 					<div class="timeline-item">
-						<h4>Lab Assistant</h4>
+						<div class="timeline-header">
+							<h4>Lab Assistant <span>— Institut Widya Pratama</span></h4>
+							<span class="timeline-date">2020 &mdash; 2022</span>
+						</div>
+						<p class="timeline-location">Pekalongan, Indonesia</p>
 						<ul>
-							<li>Guided students during hands-on laboratory sessions for programming and computer networking.</li>
-							<li>Maintained lab workstations and collaborated with faculty to refine practical exercises.</li>
+							<li>Assisted students in laboratory sessions for programming and networking courses.</li>
+							<li>Maintained laboratory equipment and ensured a productive learning environment.</li>
+							<li>Collaborated with faculty members to develop and refine lab materials.</li>
 						</ul>
 					</div>
 				</div>
@@ -250,10 +268,17 @@ import { certificates, honorsRecognitions } from '../data/certificates';
 
 			<section>
 				<h3 class="post-title">Education</h3>
-				<div class="content">
+				<div class="content timeline">
 					<div class="timeline-item">
-						<h4>Informatics Engineering</h4>
-						<p>Focused on Software Engineering, Web Development, and Cybersecurity. Active participant in local programming challenges and information security workshops.</p>
+						<div class="timeline-header">
+							<h4>Informatics Engineering <span>— Institut Widya Pratama</span></h4>
+							<span class="timeline-date">Pekalongan, Indonesia</span>
+						</div>
+						<p class="timeline-location">Specialization in Software Engineering &amp; Cybersecurity</p>
+						<ul>
+							<li>Coursework and practical study in Software Engineering, Web Development, and Cybersecurity fundamentals.</li>
+							<li>Engaged in academic software projects, practical laboratory sessions, and campus technology workshops.</li>
+						</ul>
 					</div>
 				</div>
 			</section>
@@ -321,23 +346,47 @@ import { certificates, honorsRecognitions } from '../data/certificates';
 		margin-top: 1rem;
 	}
 	.timeline-item {
-		margin-bottom: 1.75rem;
+		margin-bottom: 2rem;
+	}
+	.timeline-header {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 12px;
+		flex-wrap: wrap;
 	}
 	.timeline-item h4 {
-		font-size: 1.1rem;
+		font-size: 1.05rem;
 		color: var(--color-100);
-		margin-bottom: 0.5rem;
+		margin: 0;
+		line-height: 1.4;
 	}
 	.timeline-item h4 span {
 		font-size: 0.95rem;
 		font-weight: 400;
 		color: var(--color-400);
 	}
+	.timeline-date {
+		font-size: 0.8rem;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+		padding: 2px 8px;
+		border-radius: 4px;
+		background: rgba(128, 128, 128, 0.08);
+		border: 1px solid var(--color-700);
+		color: var(--color-300);
+		white-space: nowrap;
+	}
+	.timeline-location {
+		font-size: 0.8rem;
+		color: var(--color-400);
+		margin: 2px 0 6px;
+	}
 	.timeline-item ul {
 		list-style: disc;
 		padding-left: 1.25rem;
 		color: var(--color-300);
 		line-height: 1.6;
+		margin: 0.4rem 0 0;
 	}
 	.timeline-item li {
 		margin-bottom: 0.35rem;
