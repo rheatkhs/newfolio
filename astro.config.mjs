@@ -33,7 +33,39 @@ export default defineConfig({
   envPrefix: 'PUBLIC_',
   site: SITE_URL,
   base: '/',
-  integrations: [sitemap(), mdx()],
+  integrations: [
+    sitemap({
+      serialize(item) {
+        const url = item.url;
+        const now = new Date().toISOString();
+
+        if (url === `${SITE_URL}` || url === SITE_URL.slice(0, -1)) {
+          item.priority = 1.0;
+          item.changefreq = 'weekly';
+          item.lastmod = now;
+        } else if (
+          url === `${SITE_URL}project/` ||
+          url === `${SITE_URL}about/` ||
+          url === `${SITE_URL}design/` ||
+          url === `${SITE_URL}blog/`
+        ) {
+          item.priority = 0.9;
+          item.changefreq = 'weekly';
+          item.lastmod = now;
+        } else if (url.includes('/blog/')) {
+          item.priority = 0.8;
+          item.changefreq = 'monthly';
+          item.lastmod = now;
+        } else {
+          item.priority = 0.7;
+          item.changefreq = 'monthly';
+          item.lastmod = now;
+        }
+        return item;
+      },
+    }),
+    mdx()
+  ],
   redirects: {
     '/detail/2960-gt3': '/d/a9f2c8d1',
     '/detail/kadia': '/d/e4b1a7d2',
